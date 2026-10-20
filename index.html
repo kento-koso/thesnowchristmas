@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><!-- 共有用のプレビュー。本番（thesnowchristmas.com）では外す -->
 <title>THE SNOW CHRISTMAS 2026｜この街に雪が降る｜MEGURO MARC</title>
 <meta name="description" content="2026年12月19日（土）・20日（日）、MEGURO MARC（品川区西五反田）に本物の雪の広場ができます。金メダリストのトークショー、マーケット、アートワークショップも。入場無料。">
 <link rel="canonical" href="https://thesnowchristmas.com/">
@@ -12,7 +11,7 @@
 <meta property="og:title" content="THE SNOW CHRISTMAS 2026｜この街に雪が降る">
 <meta property="og:description" content="2026.12.19 SAT – 20 SUN／MEGURO MARC（品川区西五反田）／入場無料">
 <meta property="og:url" content="https://thesnowchristmas.com/">
-<meta property="og:image" content="https://thesnowchristmas.com/img/ogp.png"><!-- TODO: 1200×630（KV FIX後に作成） -->
+<meta property="og:image" content="https://thesnowchristmas.com/img/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1a4472">
 <!-- TODO: GA4（測定IDが決まったら）。QRごとに utm_source を分ける -->
@@ -31,7 +30,7 @@
   <a class="hd__logo" href="./">THE SNOW CHRISTMAS 2026</a>
   <nav class="hd__nav" aria-label="メニュー">
     <a href="#enjoy">楽しみかた</a>
-    <a href="#people">つくる人</a>
+    <!-- <a href="#people">つくる人</a> 取材後に戻す -->
     <a href="#venue">会場</a>
     <a href="news.html">お知らせ</a>
     <a href="snowfund.html">雪募金</a>
@@ -43,7 +42,7 @@
 
   <!-- ========== KV：タイトルと「いつ・どこで」がしっかり見える ========== -->
   <section class="kv" aria-labelledby="kv-h">
-    <img class="kv__bg" src="img/m/cover.jpg" alt="雪の降る夜の街"><!-- TODO: 本番のKVに差し替え -->
+    <img class="kv__bg" src="img/m/kv_16-9.jpg" alt="雪の降るMEGURO MARCのクリスマス">
     <div class="kv__in">
       <h1 class="kv__title" id="kv-h">THE SNOW<br>CHRISTMAS<span>2026</span></h1>
       <div class="kv__when">
@@ -146,7 +145,7 @@
 
     <!-- 5 アートワークショップ＋ホールの展示 -->
     <article class="way" id="art">
-      <figure class="way__ph way__ph--two"><img src="img/m/p5_last4.jpg" alt="ワークショップで描いた絵を手にする子どもたち" loading="lazy"><img src="img/m/p6.jpg" alt="ヴォールト天井のホールに飾られた作品" loading="lazy"></figure>
+      <figure class="way__ph way__ph--two"><img src="img/m/p5_ws.jpg" alt="アートワークショップで絵を描く子どもたち" loading="lazy"><img src="img/m/p6.jpg" alt="ヴォールト天井のホールに飾られた作品" loading="lazy"></figure>
       <div class="way__txt">
         <p class="way__no">05</p>
         <h3 class="way__h">描いた絵が、作品として飾られる。</h3>
@@ -212,7 +211,7 @@
   </section>
 
   <!-- ========== この冬をつくる人たち（前橋BOOK FES のメッセージ欄を参考）。インタビューと写真は撮影・取材後に差し替え ========== -->
-  <section class="message" id="people" aria-labelledby="msg-h">
+  <section class="message" id="people" aria-labelledby="msg-h" hidden><!-- 10/20 公開時は非表示：取材が済んだら hidden を外す -->
     <div class="wrap">
       <p class="label">People</p>
       <h2 class="h-sec" id="msg-h">この冬を、つくる人たち</h2>
@@ -237,7 +236,7 @@
           <p class="person__q">（インタビュー：このまちと、冬）</p>
         </article>
         <article class="person">
-          <div class="person__ph"><img src="img/talk/2025_kimura.jpg" alt="木村葵来選手" loading="lazy" style="object-position:55% 15%"></div>
+          <div class="person__ph"><img src="img/talk/kimura_official.jpg" alt="木村葵来選手" loading="lazy" style="object-position:50% 20%"></div>
           <p class="person__catch">（インタビューから一文）</p>
           <p class="person__name">木村葵来<small>スノーボード ビッグエア 金メダリスト</small></p>
           <p class="person__q">（インタビュー：雪の中で育ったこと）</p>
@@ -289,9 +288,9 @@
   <!-- ========== バナー（別ページへ） ========== -->
   <section class="banners" aria-label="もっと見る">
     <div class="wrap banners__in">
-      <a href="shops.html"><img src="img/m/p3_last5.jpg" alt="" loading="lazy"><b>出店者・キッチンカー</b><span>マーケットに並ぶお店</span></a>
+      <a href="shops.html"><img src="img/m/shops_market.jpg" alt="" loading="lazy"><b>出店者・キッチンカー</b><span>マーケットに並ぶお店</span></a>
       <a href="snowfund.html"><img src="img/m/fund.jpg" alt="" loading="lazy"><b>雪募金</b><span>1口1万円で、雪およそ100kg</span></a>
-      <a href="news.html"><img src="img/m/p1_last3.jpg" alt="" loading="lazy"><b>お知らせ</b><span>時間割・当日の開催状況</span></a>
+      <a href="news.html"><img src="img/m/news_tree.jpg" alt="" loading="lazy"><b>お知らせ</b><span>時間割・当日の開催状況</span></a>
     </div>
   </section>
 

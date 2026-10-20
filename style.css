@@ -346,3 +346,11 @@ button,input,textarea{font:inherit;color:inherit}
 .btn--white .grain,.btn--line .grain,.copylist .grain,.banners .grain{background:#7FA3CC;box-shadow:0 0 2px rgba(127,163,204,.8)}
 @keyframes grain{10%{opacity:var(--o,.8)}85%{opacity:var(--o,.8)}100%{transform:translate(var(--x,0),var(--h,48px));opacity:0}}
 @media (prefers-reduced-motion:reduce){.grain{display:none}}
+
+/* 10/20 本番KV（かおりさん16:9）：絵にタイトル・日付が入っているので重ねない。絵をそのまま見せ、いつ・どこでは下に置く */
+.kv{min-height:0;display:block;background:var(--c-navy)}
+.kv__bg{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.kv::after{display:none}
+.kv__title{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.kv__in{padding:36px var(--gutter) 52px}
+.kv__when{margin-top:0;border-top:0;padding-top:0}
