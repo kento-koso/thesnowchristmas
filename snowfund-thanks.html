@@ -14,22 +14,27 @@
 /* お礼ページだけの演出：夜空に雪が降り、画面の下に100kgぶん積もる */
 .gift{position:relative;height:100svh;min-height:560px;overflow:hidden;color:#fff;background:linear-gradient(to bottom,#0A1B33 0%,#0E2440 45%,#1A4472 100%);cursor:pointer;-webkit-tap-highlight-color:transparent}
 .gift canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.gift__in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;padding:clamp(96px,16vh,160px) var(--gutter) 0;text-align:center;pointer-events:none}
+.gift__in{position:relative;z-index:2;text-shadow:0 1px 14px rgba(10,27,51,.55);height:100%;display:flex;flex-direction:column;align-items:center;padding:clamp(76px,11vh,110px) var(--gutter) 0;text-align:center;pointer-events:none}
 .gift__label{font-family:var(--f-en);font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;opacity:.7}
-.gift__kg{margin-top:18px;font-family:var(--f-en);font-weight:300;line-height:1;font-size:clamp(72px,18vw,168px);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.gift__kg{margin-top:10px;font-family:var(--f-en);font-weight:300;line-height:1;font-size:min(17vw,14vh,132px);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .gift__kg small{font-size:.32em;font-weight:500;margin-left:.12em;letter-spacing:0}
-.gift__now{margin-top:14px;font-size:14px;opacity:.75;transition:opacity .8s}
-.gift__msg{margin-top:28px;font-size:clamp(20px,4.6vw,30px);font-weight:700;line-height:1.6;letter-spacing:.04em;opacity:0;transform:translateY(12px);transition:opacity 1.4s,transform 1.4s}
-.gift__sub{margin-top:14px;font-size:14px;opacity:0;transition:opacity 1.4s .6s}
+.gift__now{margin-top:8px;font-size:14px;opacity:.75;transition:opacity .8s}
+.gift__msg{margin-top:4px;font-size:clamp(18px,4.4vw,26px);font-weight:700;line-height:1.6;letter-spacing:.04em;opacity:0;transform:translateY(12px);transition:opacity 1.4s,transform 1.4s}
+.gift__sub{margin-top:8px;font-size:13px;opacity:0;transition:opacity 1.4s .6s}
 .gift.is-done .gift__now{opacity:0}
 .gift.is-done .gift__msg{opacity:1;transform:none}
 .gift.is-done .gift__sub{opacity:.85}
-.gift.is-done .gift.is-done .thx{padding:var(--sec-y) 0}
+.gift__more{margin-top:18px;opacity:0;transition:opacity 1.4s 1.2s;pointer-events:none}
+.gift__more p{font-size:12px;opacity:.8}
+.gift__more button{margin-top:8px;font:inherit;font-family:var(--f-en);font-size:14px;font-weight:700;letter-spacing:.06em;color:#fff;background:rgba(10,27,51,.55);border:1px solid rgba(255,255,255,.85);border-radius:999px;padding:10px 24px;cursor:pointer;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.gift__more button:active{transform:scale(.96)}
+.gift.is-done .gift__more{opacity:1;pointer-events:auto}
+.thx{padding:var(--sec-y) 0}
 .thx__body{max-width:640px}
 .thx__body .body+.body{margin-top:1em}
 .thx__acts{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
 .thx__body .cap{margin-top:24px}
-@media (prefers-reduced-motion:reduce){.gift__msg,.gift__sub{transition:none}}
+@media (prefers-reduced-motion:reduce){.gift__msg,.gift__sub,.gift__more{transition:none}}
 </style>
 </head>
 <body>
@@ -53,6 +58,7 @@
       <p class="gift__now" id="now">あなたの雪が、積もっています</p>
       <p class="gift__msg">雪を贈っていただき、<br>ありがとうございました。</p>
       <p class="gift__sub">12月19日・20日、この雪がMEGURO MARCに降ります。</p>
+      <div class="gift__more"><p>2口以上の方は、口数の分だけ押してください</p><button type="button" id="more">＋1口（100kg）</button></div>
     </div>
   </section>
 
@@ -97,7 +103,7 @@
   var cv = document.getElementById('snow'), ctx = cv.getContext('2d');
   var kgEl = document.getElementById('kg');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var W, H, dpr, COL = 6, cols, ground, target, flakes = [], done = false, t0 = performance.now(), last = t0;
+  var W, H, dpr, COL = 6, cols, ground, target, room, units = 1, shown = false, flakes = [], done = false, t0 = performance.now(), last = t0;
 
   function size(){
     dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -106,7 +112,17 @@
     var n = Math.ceil(W / COL) + 1, old = ground;
     cols = n; ground = new Float32Array(n);
     if (old) for (var i = 0; i < n; i++) ground[i] = old[Math.min(old.length - 1, Math.round(i * old.length / n))];
-    target = H * 0.24; // 積もりきった雪の平均の高さ
+    // 文字とボタンの下端より下だけに積もらせる（画面が小さくても文字が雪に埋もれないように）
+    var inner = gift.querySelector('.gift__more').getBoundingClientRect(), top = gift.getBoundingClientRect().top;
+    room = Math.max(H * 0.12, H - (inner.bottom - top) - 20);
+    target = T(units);
+  }
+  // k口ぶん積もったときの雪の平均の高さ。1口目は画面の22%、2口目からは少しずつ（文字に重ならない30%まで）
+  function T(k){ return k <= 0 ? 0 : Math.min(room * 0.8, H * 0.22) + (room * 0.92 - Math.min(room * 0.8, H * 0.22)) * (1 - Math.pow(0.7, k - 1)); }
+  function kgNow(){
+    var a = avg();
+    for (var k = 1; k <= units; k++) if (a < T(k)) return (k - 1) * 100 + Math.floor((a - T(k - 1)) / (T(k) - T(k - 1)) * 100);
+    return units * 100;
   }
   size(); window.addEventListener('resize', size);
 
@@ -122,7 +138,7 @@
     if (done) return;
     var c = Math.round(f.x / COL); if (c < 0 || c >= cols) return;
     var add = f.r * 1.1;
-    for (var k = -3; k <= 3; k++){ var j = c + k; if (j >= 0 && j < cols) ground[j] += add * (1 - Math.abs(k) / 4); }
+    for (var k = -3; k <= 3; k++){ var j = c + k; if (j >= 0 && j < cols) ground[j] = Math.min(room, ground[j] + add * (1 - Math.abs(k) / 4)); }
   }
 
   function smooth(){
@@ -142,12 +158,18 @@
 
   function finish(){
     if (done) return; done = true;
-    kgEl.textContent = '100'; gift.classList.add('is-done');
+    kgEl.textContent = units * 100;
+    if (!shown){ shown = true; gift.classList.add('is-done'); }
   }
+
+  // ＋1口：もう100kg降らせて積もらせる
+  document.getElementById('more').addEventListener('click', function(){
+    units++; target = T(units); done = false; t0 = performance.now() - 2500;
+    if (reduce){ for (var c = 0; c < cols; c++) ground[c] = target * (1 + 0.12 * Math.sin(c / 9)); ctx.clearRect(0, 0, W, H); drawGround(); finish(); }
+  });
 
   function frame(now){
     var el = now - t0, dt = Math.min(3, (now - last) / 16.7); last = now; // 端末の速さに左右されないよう、経過時間で動かす
-    // 積もる速さに合わせて降る量を変える（はじめは多く、積もりきったら静かに）
     // 降った粒だけで積もらせる。画面の幅に合わせて降る量を変え、8秒前後で100kgに届くようにする
     var rate = (done ? 0.5 : 4 + 4 * Math.min(1, el / 2500)) * W / 430;
     for (var s = 0; s < rate * dt; s++) if (Math.random() < 0.9) flake(Math.random() * W, -10);
@@ -167,9 +189,8 @@
     smooth(); drawGround();
 
     if (!done){
-      var p = Math.min(1, avg() / target);
-      kgEl.textContent = Math.floor(p * 100);
-      if (p >= 1 || el > 20000) finish(); // 極端に遅い端末でも20秒で区切る
+      kgEl.textContent = kgNow();
+      if (avg() >= target || el > 20000) finish(); // 極端に遅い端末でも20秒で区切る
     }
     requestAnimationFrame(frame);
   }
