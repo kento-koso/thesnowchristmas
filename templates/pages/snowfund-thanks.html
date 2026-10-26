@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ありがとうございました｜{{event.title}} {{event.year}}</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0E2440" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="snowfund-thanks.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="snow-placeholder.css" />
+    <link rel="stylesheet" href="snow-header.css" />
+    <link rel="stylesheet" href="site-shell.css" />
+  </head>
+  <body class="site-shell" id="page-top">
+    <a class="skip-link" href="#main-content">本文へスキップ</a>
+    <!-- shared:header:start -->
+    <!-- shared:header:end -->
+    <main id="main-content">
+      <section class="gift" id="gift" aria-label="あなたの雪が積もっていきます">
+        <canvas id="snow" aria-hidden="true"></canvas>
+        <div class="gift__in">
+          <p class="gift__label">Thank you</p>
+          <p class="gift__kg"><span id="kg">0</span><small>kg</small></p>
+          <p class="gift__now" id="now">あなたの雪が、積もっています</p>
+          <p class="gift__msg">雪を贈っていただき、<br />ありがとうございました。</p>
+          <p class="gift__sub">{{event.dateShort}}、この雪が{{event.venue}}に降ります。</p>
+          <div class="gift__more">
+            <p>2口以上の方は、口数の分だけ押してください</p>
+            <button type="button" id="more">＋1口（100kg）</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="thx" id="thx">
+        <div class="wrap">
+          <div class="thx__body">
+            <p class="label">Snow Fund</p>
+            <h1 class="h-sec">あなたの雪が、<br />{{event.dateShort}}、この街に降ります。</h1>
+            <p class="body">
+              いただいた雪募金は、{{event.venue}}
+              の夕陽公園につくる雪の広場の雪になります。1口で雪およそ100kg。子どもたちが寝転んで、雪の天使をつくれるくらいの雪です。
+            </p>
+            <p class="body">当日は、ぜひご家族で、ご自分の贈った雪に会いにきてください。</p>
+            <p class="body">
+              お名前をご入力いただいた方は、雪募金のページに週1回まとめて掲載します。お支払いの控えは、ご入力いただいたメールアドレスに
+              Square から届きます。
+            </p>
+            <div class="thx__acts">
+              <a class="btn" href="./#plan">予定に入れる</a>
+              <a class="btn btn--line" href="./">トップへ戻る</a>
+            </div>
+            <p class="cap">
+              お支払いについてのお問い合わせは、<a href="./#contact">お問い合わせ</a
+              >からご連絡ください。雪募金は寄付金控除の対象ではありません。
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- shared:footer:start -->
+    <!-- shared:footer:end -->
+    <script src="motion-state.js" defer></script>
+    <script src="snowfund-thanks.js" defer></script>
+    <script src="site-shell.js" defer></script>
+  </body>
+</html>

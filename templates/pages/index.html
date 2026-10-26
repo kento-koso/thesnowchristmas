@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{event.title}} {{event.year}}｜雪が降る。この街に。｜{{event.venue}}</title>
+    <meta
+      name="description"
+      content="{{event.dateJapanese}}、{{event.venue}}（品川区西五反田）に本物の雪の広場ができます。金メダリストのトークショー、マーケット、アートワークショップも。入場無料。"
+    />
+    <link rel="canonical" href="{{event.url}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{event.title}}" />
+    <meta property="og:title" content="{{event.title}} {{event.year}}｜雪が降る。この街に。" />
+    <meta
+      property="og:description"
+      content="{{event.year}}.{{event.startLabel}} {{event.startWeekday}} – {{event.lastDay}} {{event.lastWeekday}}／{{event.venue}}（品川区西五反田）／入場無料"
+    />
+    <meta property="og:url" content="{{event.url}}" />
+    <meta property="og:image" content="{{event.url}}img/optimized/ogp.501588272e2b.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#1a4472" />
+    <!-- TODO: GA4（測定IDが決まったら）。QRごとに utm_source を分ける -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="img/optimized/motion/marc-scene.712f6633fe08.webp"
+      media="(min-width: 761px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="img/optimized/motion/marc-scene-mobile.c93bfc0d2096.webp"
+      media="(max-width: 760px)"
+    />
+    <link rel="stylesheet" href="snow-lp.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "{{event.title}} {{event.year}}",
+        "startDate": "{{event.startDate}}",
+        "endDate": "{{event.lastDate}}",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "isAccessibleForFree": true,
+        "location": {
+          "@type": "Place",
+          "name": "{{event.venue}}",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "JP",
+            "addressRegion": "東京都",
+            "addressLocality": "品川区",
+            "streetAddress": "西五反田3-3-2"
+          }
+        },
+        "organizer": { "@type": "Organization", "name": "{{event.title}} 実行委員会" }
+      }
+    </script>
+    <link rel="stylesheet" href="snow-placeholder.css" />
+    <link rel="stylesheet" href="snow-world.css" />
+    <link rel="stylesheet" href="snow-header.css" />
+    <link rel="stylesheet" href="site-shell.css" />
+    <link rel="stylesheet" href="people.css" />
+    <link rel="stylesheet" href="calendar.css" />
+  </head>
+  <body class="snow-lp site-shell" id="page-top">
+    <a class="skip-link" href="#intro">本文へスキップ</a>
+    <!-- 構成の参考：前橋BOOK FES（https://maebashibookfes.jp/about）。トンマナはマスター資料 -->
+
+    <!-- shared:header:start -->
+    <!-- shared:header:end -->
+
+    <main id="top">
+      <!-- ========== KV：タイトルと「いつ・どこで」がしっかり見える ========== -->
+      <div class="hero-journey">
+        <section class="kv kv--official" aria-labelledby="kv-h">
+          <picture class="kv__art"
+            ><source
+              media="(max-width: 760px)"
+              srcset="img/optimized/motion/marc-scene-mobile.c93bfc0d2096.webp" />
+            <img
+              class="kv__bg"
+              src="img/optimized/motion/marc-scene.712f6633fe08.webp"
+              alt=""
+              fetchpriority="high"
+              width="1920"
+              height="1080"
+          /></picture>
+          <canvas class="kv__market-lights" aria-hidden="true"></canvas>
+
+          <picture class="kv__crystals" aria-hidden="true"
+            ><source
+              media="(max-width: 760px)"
+              srcset="img/optimized/motion/marc-crystals-mobile.7817ab1e4dd0.webp" />
+            <img
+              src="img/optimized/motion/marc-crystals.15c4f36f100a.webp"
+              alt=""
+              width="1920"
+              height="1080"
+          /></picture>
+          <canvas class="kv__snow" aria-hidden="true"></canvas>
+          <div class="kv__woods" aria-hidden="true">
+            <picture class="winter-tree winter-tree--back winter-tree--left"
+              ><source media="(min-width: 1024px)" srcset="img/motion/foreground-branches.webp" />
+              <img
+                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                alt=""
+                width="1024"
+                height="1536"
+            /></picture>
+            <picture class="winter-tree winter-tree--back winter-tree--right"
+              ><source media="(min-width: 1024px)" srcset="img/motion/foreground-branches.webp" />
+              <img
+                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                alt=""
+                width="1024"
+                height="1536"
+            /></picture>
+            <picture class="winter-tree winter-tree--middle winter-tree--left"
+              ><source media="(min-width: 1024px)" srcset="img/motion/foreground-branches.webp" />
+              <img
+                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                alt=""
+                width="1024"
+                height="1536"
+            /></picture>
+            <picture class="winter-tree winter-tree--middle winter-tree--right"
+              ><source media="(min-width: 1024px)" srcset="img/motion/foreground-branches.webp" />
+              <img
+                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                alt=""
+                width="1024"
+                height="1536"
+            /></picture>
+            <picture class="winter-tree winter-tree--front winter-tree--left"
+              ><source media="(min-width: 1024px)" srcset="img/motion/foreground-branches.webp" />
+              <img
+                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                alt=""
+                width="1024"
+                height="1536"
+            /></picture>
+            <picture class="winter-tree winter-tree--front winter-tree--right"
+              ><source media="(min-width: 1024px)" srcset="img/motion/foreground-branches.webp" />
+              <img
+                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                alt=""
+                width="1024"
+                height="1536"
+            /></picture>
+          </div>
+          <button class="motion-toggle" type="button" aria-pressed="false" hidden>
+            <span aria-hidden="true">Ⅱ</span> 動きを止める
+          </button>
+          <div class="kv__in">
+            <p class="hero-copy">雪が降る。この街に。</p>
+            <h1 class="kv__title" id="kv-h">
+              <img
+                class="kv__official-logo"
+                src="img/optimized/design/snow-christmas-logo.07411edf8a69.webp"
+                alt="{{event.title}}"
+                width="1400"
+                height="833"
+              />
+            </h1>
+            <p class="kv__date" aria-label="{{event.dateAccessible}}">
+              <span class="hero-year">{{event.year}}</span><b>{{event.startLabel}}</b
+              ><small>{{event.startWeekday}}</small><i>—</i><b>{{event.lastLabel}}</b
+              ><small>{{event.lastWeekday}}</small>
+            </p>
+            <p class="hero-place">
+              <span class="hero-venue"
+                ><span class="hero-venue__at">at</span
+                ><img
+                  src="img/logo/meguro-marc-wordmark-white.svg"
+                  alt="{{event.venue}}"
+                  width="172"
+                  height="16" /></span
+              ><span>（{{event.shortAddress}}）</span>
+            </p>
+            <a class="hero-link" href="#enjoy"
+              ><i class="hero-link__crystal" aria-hidden="true"></i
+              ><span class="hero-link__label"
+                ><small aria-hidden="true">EXPLORE THE SNOW</small>イベントの楽しみかたを見る</span
+              ><span class="hero-link__arrow" aria-hidden="true">↓</span></a
+            >
+          </div>
+          <div class="hero-seal">
+            <span>WELCOME<br />TO OUR TOWN</span><b>入場無料</b>
+          </div>
+          <a class="hero-scroll" href="#intro">SCROLL INTO THE SNOW <span>↓</span></a>
+        </section>
+      </div>
+      <div class="event-ribbon">
+        <span>{{event.monthUpper}} {{event.startDay}} &amp; {{event.lastDay}}, {{event.year}}</span
+        ><i>✧</i><span>SNOW · MARKET · ART · COFFEE</span><i>✧</i><span>{{event.venue}}</span>
+      </div>
+
+      <!-- お知らせの帯：新しいお知らせがあるときだけ hidden を外す -->
+      <aside class="newsbar" id="newsbar" hidden>
+        <a href="news.html"><span>NEWS</span><!-- 例：トークショーの日時が決まりました --></a>
+      </aside>
+
+      <!-- ========== コピーと文章 ========== -->
+      <section class="intro paper" id="intro" aria-labelledby="intro-h">
+        <div class="winter-branch winter-branch--left" aria-hidden="true"></div>
+        <div class="winter-branch winter-branch--right" aria-hidden="true"></div>
+        <div class="wrap intro-layout">
+          <div class="intro-story">
+            <p class="label">A winter to remember</p>
+            <h2 class="intro__copy" id="intro-h">雪が降る。この街に。</h2>
+            <p class="intro-hand">Let it snow, let us smile.</p>
+            <div class="intro__body">
+              <p>
+                東京では最近、雪の降る日が少なくなりました。<br />これは世界的な話で、これから先はもっと少なくなっていくそうです。
+              </p>
+              <p>そんな中、この2日間は、<br />みんなの知っているこのまちで雪のお祭りをします。</p>
+              <p>さわって、ころがって、つくって、<br />からだをつかって、雪を感じましょう。</p>
+              <p>
+                そして、雪のある冬をこれからも残したいと思えるような、<br />すてきな思い出をつくりましょう。
+              </p>
+              <p>会場でおまちしています。</p>
+            </div>
+            <div class="intro-save">
+              <p class="intro-save-date" aria-label="{{event.dateAccessible}}">
+                <span>{{event.year}}</span> {{event.startLabel}}
+                <small>{{event.startWeekday}}</small><i aria-hidden="true">—</i>{{event.lastLabel}}
+                <small>{{event.lastWeekday}}</small>
+              </p>
+              <details class="intro-calendar">
+                <summary>
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <rect x="3.5" y="5.5" width="17" height="15" rx="1.5" />
+                    <path d="M7.5 3v5m9-5v5M4 10h16m-12 4h3m2 0h3m-8 3h3" /></svg
+                  >カレンダーに予定を入れる<span class="intro-calendar-toggle" aria-hidden="true"
+                    >＋</span
+                  >
+                </summary>
+                <div class="intro-calendar-options">
+                  <a href="#plan" data-calendar="google" target="_blank" rel="noopener"
+                    >Googleカレンダーに入れる<span aria-hidden="true">↗</span></a
+                  >
+                  <a
+                    href="#plan"
+                    data-calendar="apple"
+                    download="thesnowchristmas{{event.year}}.ics"
+                    >iPhone・Macのカレンダーに入れる<span aria-hidden="true">↓</span></a
+                  >
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="memory-collage" aria-label="冬の楽しみのイメージ写真">
+            <figure class="polaroid memory-one">
+              <img
+                src="img/optimized/m/p1.5bf4da16ebc5.webp"
+                alt="雪の中で遊ぶ子どもたち"
+                loading="lazy"
+                width="1440"
+                height="1620"
+                decoding="async"
+              />
+              <figcaption>01 / A little snow adventure</figcaption>
+            </figure>
+            <figure class="polaroid memory-two">
+              <img
+                src="img/m/p4.jpg"
+                alt="マシュマロを浮かべた温かいココア"
+                loading="lazy"
+                width="1440"
+                height="1619"
+                decoding="async"
+              />
+              <figcaption>02 / A cup of happiness</figcaption>
+            </figure>
+          </div>
+        </div>
+        <p class="intro-foot">FOR THE SNOW. FOR THE FUTURE. <span>❄</span> FOR OUR TOWN.</p>
+        <div class="winter-ground" aria-hidden="true"></div>
+        <div class="winter-bank" aria-hidden="true"></div>
+      </section>
+
+      <!-- ========== {{event.title}} の楽しみかた ========== -->
+      <section class="enjoy blue-paper" id="enjoy" aria-labelledby="enjoy-h">
+        <div class="winter-branch winter-branch--left" aria-hidden="true"></div>
+        <div class="winter-branch winter-branch--right" aria-hidden="true"></div>
+        <!-- shared:garland:start -->
+        <!-- shared:garland:end -->
+
+        <div class="wrap program-heading">
+          <p class="label">Find your winter favorites</p>
+          <h2 class="section-display" id="enjoy-h">A little winter magic.</h2>
+          <p class="section-subtitle">{{event.title}} の楽しみかた</p>
+          <nav class="program-nav" aria-label="プログラム">
+            <a href="#snowpark">01 雪あそび</a><a href="#talk">02 トーク</a
+            ><a href="#market">03 マーケット</a><a href="#cafe">04 カフェ</a
+            ><a href="#art">05 アート</a>
+          </nav>
+        </div>
+
+        <div class="program-grid">
+          <!-- 1 雪で思いっきり遊ぶ ＋ 雪募金の導線 -->
+          <article class="way" id="snowpark">
+            <figure class="way__ph">
+              <img
+                src="img/optimized/m/p1.5bf4da16ebc5.webp"
+                alt="雪の上でソリに乗って笑う子どもたち"
+                loading="lazy"
+                width="1440"
+                height="1620"
+                decoding="async"
+              />
+            </figure>
+            <div class="way__txt">
+              <p class="way__no">01</p>
+              <h3 class="way__h">雪で、思いっきり遊ぶ。</h3>
+              <p class="way__en">Play Snow Park｜雪の広場</p>
+              <p class="body">
+                {{event.venue}}
+                の夕陽公園に、本物の雪の広場ができます。さわって、ころがって、雪だるまをつくる。ソリやスコップは会場で無料で貸し出すので、手ぶらで来ても、そのまま遊べます。
+              </p>
+              <p class="tags">
+                <span
+                  >{{event.startLabel}} {{event.startWeekday}} – {{event.lastDay}}
+                  {{event.lastWeekday}}</span
+                ><span>夕陽公園</span><span>無料</span>
+              </p>
+              <a class="fundlink" href="snowfund.html">
+                <b>雪募金で、雪の広場を広げる</b>
+                <span>1口1万円で、雪およそ100kg。集まった分だけ、この街に雪がつもります。</span>
+                <i aria-hidden="true">→</i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 2 金メダリストのトークショー -->
+          <article class="way way--rev" id="talk">
+            <figure class="way__ph">
+              <img
+                src="img/optimized/talk/2025_talk.bba82f3d51f1.webp"
+                alt="2025年のトークショーで話す木村葵来選手"
+                loading="lazy"
+                style="object-position: 50% 18%"
+                width="1400"
+                height="933"
+                decoding="async"
+              />
+            </figure>
+            <div class="way__txt">
+              <p class="way__no">02</p>
+              <h3 class="way__h">金メダリストと、雪の話をする。</h3>
+              <p class="way__en">Talk Show｜トークショー</p>
+              <p class="body">
+                ミラノ・コルティナ五輪のスノーボードで金メダルを獲った木村葵来選手が、{{event.venue}}
+                に帰ってきます。雪の中で育ったこと、好きなことを続けてきたこと。子どもたちからの質問に答える時間もつくります。
+              </p>
+              <p class="tags">
+                <span>日時は調整中</span><span>ツリーとキッチンカーのあいだの広場</span>
+              </p>
+              <details class="ask">
+                <summary class="btn">木村選手への質問について</summary>
+                <div class="blank-panel blank-panel--compact">
+                  <div class="blank-panel-head" aria-hidden="true">
+                    <span class="blank-mark">✧</span><span class="blank-caption">COMING SOON</span>
+                  </div>
+                  <div class="blank-lines" aria-hidden="true">
+                    <span class="blank-line"></span><span class="blank-line"></span
+                    ><span class="blank-line"></span>
+                  </div>
+                  <p>質問の受付は、ただいま準備中です。</p>
+                </div>
+                <form hidden class="ask__form" onsubmit="return false;">
+                  <!-- TODO: 送り先（Googleフォーム等）が決まるまで送信しない -->
+                  <p class="ask__lead">
+                    当日、トークショーで答えてもらいます。雪のこと、スノーボードのこと、なんでもどうぞ。
+                  </p>
+                  <label
+                    >ニックネーム<input type="text" name="nickname" placeholder="例：ゆきちゃん"
+                  /></label>
+                  <label
+                    >年齢（学年）<input type="text" name="age" placeholder="例：小学2年生"
+                  /></label>
+                  <label
+                    >質問<textarea
+                      name="question"
+                      rows="3"
+                      placeholder="例：はじめてスノーボードにのったのは何さいですか？"
+                    ></textarea>
+                  </label>
+                  <button type="submit" class="btn" disabled>送る（準備中）</button>
+                  <p class="cap">いただいた質問から、当日いくつか選んでお答えします。</p>
+                </form>
+              </details>
+            </div>
+          </article>
+
+          <!-- 3 クリスマスマーケット＆キッチンカー -->
+          <article class="way" id="market">
+            <figure class="way__ph">
+              <img
+                src="img/m/p3.jpg"
+                alt="灯りのともる冬のマーケット"
+                loading="lazy"
+                width="1184"
+                height="1333"
+                decoding="async"
+              />
+            </figure>
+            <div class="way__txt">
+              <p class="way__no">03</p>
+              <h3 class="way__h">冬の市を、歩く。</h3>
+              <p class="way__en">Christmas Market &amp; Kitchen Car｜マーケット＆キッチンカー</p>
+              <p class="body">
+                ガーデンに、まちのお店が並ぶ冬の市が開きます。お店を出すのは、{{event.venue}}
+                にゆかりのある人や、このまちで商いをする人たち。外からもすてきなお店とキッチンカーがたくさん来ます。温かい食べものと飲みものを片手に、冬の贈りものを探しに。
+              </p>
+              <p class="tags">
+                <span
+                  >{{event.startLabel}} {{event.startWeekday}} – {{event.lastDay}}
+                  {{event.lastWeekday}}</span
+                ><span>ガーデン</span>
+              </p>
+              <a class="morelink" href="shops.html">出店者・キッチンカーを見る →</a>
+            </div>
+          </article>
+
+          <!-- 4 カフェスタンド -->
+          <article class="way way--rev" id="cafe">
+            <figure class="way__ph">
+              <img
+                src="img/m/p4.jpg"
+                alt="マシュマロの入った温かいココア"
+                loading="lazy"
+                width="1440"
+                height="1619"
+                decoding="async"
+              />
+            </figure>
+            <div class="way__txt">
+              <p class="way__no">04</p>
+              <h3 class="way__h">温かい一杯で、ひと息つく。</h3>
+              <p class="way__en">Coffee Stand MARC｜カフェ</p>
+              <p class="body">
+                雪で遊んで冷えた手には、温かいコーヒーとココアをどうぞ。Coffee Stand MARC で、THE
+                SNOW CHRISTMAS
+                だけの冬の限定ドリンクを用意します。寒い日でも、ここに来ればほっと温まれます。
+              </p>
+              <p class="tags">
+                <span
+                  >{{event.startLabel}} {{event.startWeekday}} – {{event.lastDay}}
+                  {{event.lastWeekday}}</span
+                ><span>屋外</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- 5 アートワークショップ＋ホールの展示 -->
+          <article class="way" id="art">
+            <figure class="way__ph way__ph--two">
+              <img
+                src="img/optimized/m/p5_ws.c80f08042d21.webp"
+                alt="アートワークショップで絵を描く子どもたち"
+                loading="lazy"
+                width="900"
+                height="900"
+                decoding="async"
+              /><img
+                src="img/optimized/m/p6.69de053f8a5f.webp"
+                alt="ヴォールト天井のホールに飾られた作品"
+                loading="lazy"
+                width="1366"
+                height="1536"
+                decoding="async"
+              />
+            </figure>
+            <div class="way__txt">
+              <p class="way__no">05</p>
+              <h3 class="way__h">描いた絵が、作品として飾られる。</h3>
+              <p class="way__en">Art Workshop &amp; Exhibition｜アートワークショップと展示</p>
+              <p class="body">
+                館内のスタジオに外部のアーティストを招き、雪と冬をテーマに、子どもも大人も同じテーブルで手を動かします。描いた絵は、ホールに作品として飾ります。クリスマスキャンドルのワークショップも開きます。
+              </p>
+              <p class="tags">
+                <span
+                  >{{event.startLabel}} {{event.startWeekday}} – {{event.lastDay}}
+                  {{event.lastWeekday}}</span
+                ><span>STUDIO・HALL</span><span>参加の方法は11月上旬に</span>
+              </p>
+            </div>
+          </article>
+        </div>
+        <!-- 会場マップ（マスター資料の会場図。番号は上の楽しみかたと対応） -->
+        <div class="vmap" id="map">
+          <div class="vmap__head">
+            <p class="label">A little guide to our town</p>
+            <h3 class="way__h">会場マップ</h3>
+          </div>
+          <div class="vmap__img">
+            <img
+              src="img/optimized/m/venue_map.abce6eb31f1d.webp"
+              alt="{{event.venue}} の会場図"
+              loading="lazy"
+              width="975"
+              height="815"
+              decoding="async"
+            />
+            <a class="pin" href="#snowpark" aria-label="01 雪の広場" style="left: 84%; top: 17%"
+              >01</a
+            >
+            <a class="pin" href="#talk" aria-label="02 トークショー" style="left: 68%; top: 56%"
+              >02</a
+            >
+            <a
+              class="pin"
+              href="#market"
+              aria-label="03 マーケット・キッチンカー"
+              style="left: 43%; top: 49%"
+              >03</a
+            >
+            <a
+              class="pin"
+              href="#market"
+              aria-label="03 マーケット・キッチンカー"
+              style="left: 63%; top: 66%"
+              >03</a
+            >
+            <a class="pin" href="#cafe" aria-label="04 カフェ" style="left: 35%; top: 40%">04</a>
+            <a
+              class="pin"
+              href="#art"
+              aria-label="05 アートワークショップ・展示"
+              style="left: 11%; top: 44%"
+              >05</a
+            >
+            <a
+              class="pin"
+              href="#art"
+              aria-label="05 アートワークショップ・展示"
+              style="left: 40%; top: 24%"
+              >05</a
+            >
+          </div>
+          <ol class="vmap__list">
+            <li>
+              <a href="#snowpark"><b>01</b>雪の広場<small>夕陽公園</small></a>
+            </li>
+            <li>
+              <a href="#talk"><b>02</b>トークショー<small>ツリーとキッチンカーのあいだ</small></a>
+            </li>
+            <li>
+              <a href="#market"><b>03</b>マーケット＆キッチンカー<small>ガーデン</small></a>
+            </li>
+            <li>
+              <a href="#cafe"><b>04</b>Coffee Stand MARC<small>屋外</small></a>
+            </li>
+            <li>
+              <a href="#art"><b>05</b>ワークショップと展示<small>STUDIO・HALL</small></a>
+            </li>
+          </ol>
+          <p class="cap">会場図はイメージです。配置は変わることがあります。</p>
+        </div>
+        <p class="wrap cap">
+          写真：Pexels（Polesie Toys）／{{event.title}} 2025／Unsplash（Darya Min・Katya
+          Azimova）／{{event.venue}} ART WORKSHOP（Nachara・2025.03）／{{event.venue}} HALL
+          での展示。一部の写真はイメージです。
+        </p>
+      </section>
+
+      <!-- ========== カレンダーに予定を入れる（クリックして現実とつなぐ） ========== -->
+      <section class="plan paper" id="plan" aria-labelledby="plan-h">
+        <div class="winter-branch winter-branch--left" aria-hidden="true"></div>
+        <div class="winter-branch winter-branch--right" aria-hidden="true"></div>
+        <div class="wrap plan-heading">
+          <p class="label">You’re invited</p>
+          <h2 class="section-display" id="plan-h">Save the date.</h2>
+          <p class="section-subtitle">予定に入れておく</p>
+        </div>
+        <div class="wrap plan__in">
+          <div class="date-collage">
+            <div
+              class="date-sheet"
+              role="img"
+              aria-label="{{event.year}}年{{event.month}}月のカレンダー。開催日は{{event.startDay}}日{{event.startWeekdayJapanese}}曜日と{{event.lastDay}}日{{event.lastWeekdayJapanese}}曜日。{{event.venue}}、入場無料。"
+            >
+              <div class="date-month">
+                <span>{{event.monthEnglish}}</span><span>{{event.year}}</span>
+              </div>
+              <div class="date-grid" aria-hidden="true">
+                <div class="date-weekday">FRIDAY</div>
+                <div class="date-weekday">SATURDAY</div>
+                <div class="date-weekday">SUNDAY</div>
+                <div class="date-cell date-muted"><span>11</span></div>
+                <div class="date-cell date-muted"><span>12</span></div>
+                <div class="date-cell date-muted"><span>13</span></div>
+                <div class="date-cell date-eve">
+                  <span>18</span><i>See you<br />in the snow!</i>
+                </div>
+                <div class="date-cell date-event">
+                  <b
+                    >{{event.startDay}}<svg viewBox="0 0 120 100">
+                      <path
+                        d="M99 17C65-6 15 9 8 46C-1 89 59 104 96 82C126 64 117 22 80 12"
+                      /></svg></b
+                  ><small>{{event.startWeekday}}</small>
+                </div>
+                <div class="date-cell date-event">
+                  <b
+                    >{{event.lastDay}}<svg viewBox="0 0 120 100">
+                      <path
+                        d="M99 17C65-6 15 9 8 46C-1 89 59 104 96 82C126 64 117 22 80 12"
+                      /></svg></b
+                  ><small>{{event.lastWeekday}}</small>
+                </div>
+                <div class="date-cell date-muted date-bottom"><span>25</span></div>
+                <div class="date-cell date-muted date-bottom"><span>26</span></div>
+                <div class="date-cell date-muted date-bottom"><span>27</span></div>
+                <div class="date-event-title">
+                  THE SNOW<br />CHRISTMAS<span>at {{event.venue}}</span>
+                </div>
+              </div>
+            </div>
+            <figure class="date-photo date-photo--snow">
+              <img
+                src="img/m/p1_last3.jpg"
+                alt="昨年の会場で雪遊びを楽しむ様子"
+                loading="lazy"
+                width="824"
+                height="368"
+                decoding="async"
+              />
+              <figcaption>A little winter magic.</figcaption>
+            </figure>
+            <figure class="date-photo date-photo--market">
+              <img
+                src="img/optimized/m/shops_market.ef33b5a90bd6.webp"
+                alt="あたたかな灯りのクリスマスマーケットのイメージ"
+                loading="lazy"
+                width="900"
+                height="900"
+                decoding="async"
+              />
+              <figcaption>Meet you at MARC.</figcaption>
+            </figure>
+            <div class="date-stamp">入場無料<span>FREE ENTRY</span></div>
+          </div>
+          <div class="plan__box">
+            <p class="date-invitation-label">LET’S MAKE A WINTER MEMORY</p>
+            <h3 class="date-invitation-title">カレンダーに入れて、<br />あとは当日、来るだけ。</h3>
+            <p class="opening-note">開場時間は11月上旬にお知らせします。</p>
+            <div class="plan__btns">
+              <a class="btn" href="#" id="calGoogle" target="_blank" rel="noopener"
+                >Googleカレンダーに入れる</a
+              >
+              <a class="btn" href="#" id="calApple" download="thesnowchristmas{{event.year}}.ics"
+                >iPhone・Macのカレンダーに入れる</a
+              >
+            </div>
+            <ul class="copylist">
+              <li>
+                <span>日時</span><b id="cpDate">{{event.dateJapanese}}</b
+                ><button type="button" data-copy="cpDate">コピー</button>
+              </li>
+              <li>
+                <span>場所</span><b id="cpPlace">{{event.venue}} {{event.address}}</b
+                ><button type="button" data-copy="cpPlace">コピー</button>
+              </li>
+              <li>
+                <span>URL</span><b id="cpUrl">{{event.url}}</b
+                ><button type="button" data-copy="cpUrl">コピー</button>
+              </li>
+            </ul>
+            <div class="plan__next">
+              <p>次に</p>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&amp;destination=MEGURO%20MARC%20%E5%93%81%E5%B7%9D%E5%8C%BA%E8%A5%BF%E4%BA%94%E5%8F%8D%E7%94%B03-3-2"
+                target="_blank"
+                rel="noopener"
+                >行き方を調べる →</a
+              >
+              <a href="#" id="share">家族や友だちに送る →</a>
+            </div>
+          </div>
+        </div>
+        <div class="winter-ground" aria-hidden="true"></div>
+        <div class="winter-bank" aria-hidden="true"></div>
+      </section>
+
+      <section class="people-section" id="people" aria-labelledby="msg-h">
+        <div class="wrap people-heading">
+          <div>
+            <p class="label">People</p>
+            <h2 id="msg-h">この冬を、<br />つくる人たち</h2>
+          </div>
+          <div class="people-intro">
+            <p>
+              雪を降らせる人、お店を出す人、話をしに来る人。<br />{{event.title}} は、<br />このまちに関わる人たちでつくっています。
+            </p>
+            <p class="people-status">プロフィール・インタビューは順次公開します。</p>
+          </div>
+        </div>
+        <div
+          class="people-strip"
+          tabindex="0"
+          role="region"
+          aria-label="この冬をつくる人たちの写真一覧"
+        >
+          <div class="people-scene">
+            <svg
+              class="people-string"
+              viewBox="0 0 1200 180"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M-30 60 C20 80 60 98 110 92 S280 14 355 28 S520 118 600 108 S770 0 845 12 S1020 88 1090 82 S1180 65 1230 40"
+              />
+            </svg>
+            <div class="people-cards">
+              <article class="people-card" aria-labelledby="people-name-1">
+                <span class="people-clip" aria-hidden="true"></span>
+                <div class="people-portrait">
+                  <div class="people-portrait-blank" aria-label="写真は準備中">
+                    <span aria-hidden="true">PORTRAIT<br />COMING SOON</span>
+                  </div>
+                </div>
+                <div class="people-caption">
+                  <span class="people-number" aria-hidden="true">01</span>
+                  <h3 id="people-name-1">片岡 奨</h3>
+                  <p>Embedded Blue</p>
+                </div>
+                <button
+                  class="people-open"
+                  type="button"
+                  aria-label="片岡 奨のプロフィールを見る"
+                  aria-haspopup="dialog"
+                  aria-controls="people-dialog"
+                >
+                  <span>プロフィールを見る <i aria-hidden="true">↗</i></span>
+                </button>
+              </article>
+              <article class="people-card" aria-labelledby="people-name-2">
+                <span class="people-clip" aria-hidden="true"></span>
+                <div class="people-portrait">
+                  <div class="people-portrait-blank" aria-label="写真は準備中">
+                    <span aria-hidden="true">PORTRAIT<br />COMING SOON</span>
+                  </div>
+                </div>
+                <div class="people-caption">
+                  <span class="people-number" aria-hidden="true">02</span>
+                  <h3 id="people-name-2">阿部 泰祐</h3>
+                  <p>5MEDIT</p>
+                </div>
+                <button
+                  class="people-open"
+                  type="button"
+                  aria-label="阿部 泰祐のプロフィールを見る"
+                  aria-haspopup="dialog"
+                  aria-controls="people-dialog"
+                >
+                  <span>プロフィールを見る <i aria-hidden="true">↗</i></span>
+                </button>
+              </article>
+              <article class="people-card" aria-labelledby="people-name-3">
+                <span class="people-clip" aria-hidden="true"></span>
+                <div class="people-portrait">
+                  <div class="people-portrait-blank" aria-label="写真は準備中">
+                    <span aria-hidden="true">PORTRAIT<br />COMING SOON</span>
+                  </div>
+                </div>
+                <div class="people-caption">
+                  <span class="people-number" aria-hidden="true">03</span>
+                  <h3 id="people-name-3">野村不動産</h3>
+                  <p>{{event.venue}} のまちをつくる会社</p>
+                </div>
+                <button
+                  class="people-open"
+                  type="button"
+                  aria-label="野村不動産のプロフィールを見る"
+                  aria-haspopup="dialog"
+                  aria-controls="people-dialog"
+                >
+                  <span>プロフィールを見る <i aria-hidden="true">↗</i></span>
+                </button>
+              </article>
+              <article class="people-card" aria-labelledby="people-name-4">
+                <span class="people-clip" aria-hidden="true"></span>
+                <div class="people-portrait">
+                  <img
+                    src="img/optimized/talk/kimura_official.29cc4657d092.webp"
+                    alt="木村葵来選手"
+                    loading="lazy"
+                    width="440"
+                    height="550"
+                    decoding="async"
+                  />
+                </div>
+                <div class="people-caption">
+                  <span class="people-number" aria-hidden="true">04</span>
+                  <h3 id="people-name-4">木村葵来</h3>
+                  <p>スノーボード ビッグエア 金メダリスト</p>
+                </div>
+                <button
+                  class="people-open"
+                  type="button"
+                  aria-label="木村葵来のプロフィールを見る"
+                  aria-haspopup="dialog"
+                  aria-controls="people-dialog"
+                >
+                  <span>プロフィールを見る <i aria-hidden="true">↗</i></span>
+                </button>
+              </article>
+              <article class="people-card" aria-labelledby="people-name-5">
+                <span class="people-clip" aria-hidden="true"></span>
+                <div class="people-portrait">
+                  <div class="people-portrait-blank" aria-label="写真は準備中">
+                    <span aria-hidden="true">PORTRAIT<br />COMING SOON</span>
+                  </div>
+                </div>
+                <div class="people-caption">
+                  <span class="people-number" aria-hidden="true">05</span>
+                  <h3 id="people-name-5">キッチンカーの方</h3>
+                  <p>ウィンターマーケット出店者</p>
+                </div>
+                <button
+                  class="people-open"
+                  type="button"
+                  aria-label="キッチンカーの方のプロフィールを見る"
+                  aria-haspopup="dialog"
+                  aria-controls="people-dialog"
+                >
+                  <span>プロフィールを見る <i aria-hidden="true">↗</i></span>
+                </button>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="wrap people-note">
+          <p>お名前・肩書きは取材のときに確認して入れます。</p>
+          <span class="people-swipe">横にスクロールして見る →</span>
+        </div>
+      </section>
+
+      <dialog
+        class="people-dialog"
+        id="people-dialog"
+        aria-labelledby="people-dialog-name"
+        aria-describedby="people-dialog-status"
+      >
+        <button
+          class="people-dialog-close"
+          type="button"
+          aria-label="プロフィールを閉じる"
+          autofocus
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="people-dialog-layout">
+          <div class="people-dialog-photo"></div>
+          <div class="people-dialog-content">
+            <p class="people-dialog-eyebrow">PEOPLE / <span id="people-dialog-number"></span></p>
+            <h2 id="people-dialog-name"></h2>
+            <p id="people-dialog-role"></p>
+            <div class="people-dialog-pending">
+              <span class="people-dialog-soon" aria-hidden="true">STORY COMING SOON</span>
+              <div class="people-dialog-lines" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <p id="people-dialog-status">
+                プロフィール・インタビューは、<br />ただいま準備中です。
+              </p>
+            </div>
+            <p class="people-dialog-signature">The people behind our winter.</p>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- ========== 協賛 ========== -->
+      <section class="sponsors" aria-labelledby="sp-h">
+        <div class="wrap">
+          <p class="label">Organizer &amp; Sponsors</p>
+          <p class="organizer"><span>主催</span>{{event.title}} 実行委員会</p>
+          <h2 class="h-sec" id="sp-h">協賛</h2>
+          <ul class="logos">
+            <li>
+              <img
+                src="img/optimized/logo/nomura_re.d0996feacfbd.webp"
+                alt="野村不動産"
+                width="390"
+                height="233"
+                loading="lazy"
+                decoding="async"
+                onerror="
+                  this.outerHTML = '<span class=&quot;logo-slot&quot;>野村不動産 ロゴ</span>'
+                "
+              /><!-- ロゴ：高祖さん提供（nomura_rei_vci001.png）。使用規定・余白・最小サイズは野村不動産に確認 -->
+            </li>
+          </ul>
+          <p class="cap">この雪は、まちの企業と、みなさんの雪募金で降っています。</p>
+        </div>
+      </section>
+
+      <!-- ========== 会場について ========== -->
+      <section class="venue" id="venue" aria-labelledby="venue-h">
+        <figure class="venue__ph">
+          <img
+            src="img/m/place_garden.jpg"
+            alt="{{event.venue}} の中庭"
+            loading="lazy"
+            width="962"
+            height="812"
+            decoding="async"
+          />
+        </figure>
+        <div class="venue__txt">
+          <p class="label">Venue</p>
+          <h2 class="section-display" id="venue-h">Meet us here.</h2>
+          <p class="section-subtitle">会場について｜{{event.venue}}</p>
+          <p class="venue-name">{{event.venue}}</p>
+          <p class="venue-address">{{event.address}}</p>
+          <p class="body">
+            目黒・五反田・不動前、3つの駅のあいだにある MEGURO
+            MARC。500戸の住まいと、平日約3,000人が行き交うオフィスが、ひとつの中庭を囲んでいます。働く人、暮らす人、訪れる人が自然とすれちがう、このまちの広場です。
+          </p>
+          <ul class="stations">
+            <li><b>不動前駅</b><span>東急目黒線</span><em>徒歩7分</em></li>
+            <li>
+              <b>目黒駅</b><span>JR山手線・東京メトロ南北線・都営三田線・東急目黒線</span
+              ><em>徒歩10分</em>
+            </li>
+            <li><b>五反田駅</b><span>JR山手線・都営浅草線・東急池上線</span><em>徒歩11分</em></li>
+          </ul>
+          <div class="actions">
+            <a class="btn" href="https://meguromarc.net/" target="_blank" rel="noopener"
+              >{{event.venue}} を詳しく見る ↗</a
+            >
+            <a
+              class="btn btn--line"
+              href="https://www.google.com/maps/search/?api=1&amp;query=MEGURO%20MARC%20%E5%93%81%E5%B7%9D%E5%8C%BA%E8%A5%BF%E4%BA%94%E5%8F%8D%E7%94%B03-3-2"
+              target="_blank"
+              rel="noopener"
+              >Googleマップ ↗</a
+            >
+          </div>
+          <p class="cap">写真：{{event.venue}}</p>
+        </div>
+      </section>
+
+      <!-- ========== バナー（別ページへ） ========== -->
+      <section class="banners" aria-label="もっと見る">
+        <div class="wrap banners__in">
+          <a href="shops.html"
+            ><img
+              src="img/optimized/m/shops_market.ef33b5a90bd6.webp"
+              alt=""
+              loading="lazy"
+              width="900"
+              height="900"
+              decoding="async"
+            /><b>出店者・キッチンカー</b><span>マーケットに並ぶお店</span></a
+          >
+          <a href="snowfund.html"
+            ><img
+              src="img/optimized/m/fund.62b3aeca9d38.webp"
+              alt=""
+              loading="lazy"
+              width="1600"
+              height="1543"
+              decoding="async"
+            /><b>雪募金</b><span>1口1万円で、雪およそ100kg</span></a
+          >
+          <a href="news.html"
+            ><img
+              src="img/optimized/m/news_tree.84ccb20a0558.webp"
+              alt=""
+              loading="lazy"
+              width="900"
+              height="900"
+              decoding="async"
+            /><b>お知らせ</b><span>時間割・当日の開催状況</span></a
+          >
+        </div>
+      </section>
+
+      <!-- ========== よくある質問 ========== -->
+      <section class="faq-sec" id="faq" aria-labelledby="faq-h">
+        <div class="winter-branch winter-branch--left" aria-hidden="true"></div>
+        <div class="winter-branch winter-branch--right" aria-hidden="true"></div>
+        <div class="wrap faq">
+          <p class="label">FAQ</p>
+          <h2 class="section-display" id="faq-h">Before you visit.</h2>
+          <p class="section-subtitle">よくある質問</p>
+          <details>
+            <summary>入場料はかかりますか？</summary>
+            <p>
+              入場は無料です。マーケット・キッチンカー・カフェでのお買いものは、各店でお支払いください。
+            </p>
+          </details>
+          <details>
+            <summary>雪あそびに持っていくものは？</summary>
+            <p>
+              ソリやスコップなどのおもちゃは無料で貸し出します。手ぶらで遊べます。雪で濡れるので、手袋と着替えがあると安心です。
+            </p>
+          </details>
+          <details>
+            <summary>雪の広場はいつ開いていますか？</summary>
+            <p>
+              {{event.dateWithoutYear}}の2日間です。開いている時間は、11月上旬にこのページでお知らせします。
+            </p>
+          </details>
+          <details>
+            <summary>クリスマスツリーはいつ見られますか？</summary>
+            <p>
+              12月10日（木）から26日（土）まで、{{event.venue}}
+              の中央に立っています。夜は灯りがともります。
+            </p>
+          </details>
+          <details>
+            <summary>雨や雪の予報のときは？</summary>
+            <p>開催の判断と、当日のお知らせの方法は、11月上旬に「お知らせ」でお伝えします。</p>
+          </details>
+          <!-- TODO（11/6までに答えを決める）：予約の有無／混雑と入場制限／対象年齢と付き添い／ベビーカー・トイレ・授乳室／駐車場と駐輪場 -->
+        </div>
+        <div class="winter-bank" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <!-- ========== 一番下：もう一度メニュー＋SNS＋お問い合わせ ========== -->
+    <!-- shared:footer:start -->
+    <!-- shared:footer:end -->
+
+    <script src="config/event.js" defer></script>
+    <script src="motion-state.js" defer></script>
+    <script src="button-snow.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="snow-motion.js" defer></script>
+    <script src="snow-logo.js" defer></script>
+    <script src="snow-atmosphere.js" defer></script>
+    <script src="site-shell.js" defer></script>
+    <script src="people.js" defer></script>
+  </body>
+</html>
