@@ -1,0 +1,5 @@
+node_modules
+img
+/*.html
+partners
+config/event.js
