@@ -1,0 +1,21 @@
+MARC motion assets — original artwork, resized for browser delivery.
+Source root: /Users/kaori/Documents/Codex/2026-10-04/th/FINAL_MARC/01_PRINT
+Desktop: 16x9_center/layers/14_background_no_snow_no_volume_no_crystals.png
+Desktop crystals: 16x9_center/layers/13_crystals.png
+Mobile: A3/layers/14_background_no_snow_no_volume_no_crystals.png
+Mobile crystals: A3/layers/13_crystals.png
+No source files changed. Background layers are alternatives, not cumulative overlays.
+Snow is generated in the browser using three-dimensional positions and perspective projection.
+The original buildings/tree scene is prerendered, not a live Blender/glTF mesh.
+Original mesh available at FINAL_MARC/02_BLENDER/MARC_FINAL.blend (approximately 3.8 GB).
+
+foreground-fir.webp: original generated foreground asset, built-in ImageGen,
+2026-10-24. Preserved RGBA transparency, WebP quality 88. Source:
+/Users/kaori/.codex/generated_images/01a16981-6d88-7151-87d5-e11f92b47b76/exec-ac4f686d-7ae5-48f0-9af5-9023564eac65.png
+Not a Hyde Park site asset. Desktop only (1024px+), two depth rows.
+
+foreground-branches.webp: current foreground, replaces fir in the LP.
+Original generated snowy leafless silver birch, built-in ImageGen, 2026-10-24.
+True RGBA alpha retained, WebP quality 90. Original:
+/Users/kaori/.codex/generated_images/01a16981-6d88-7151-87d5-e11f92b47b76/exec-443ff741-4933-4b70-8f71-1fd3b505c775.png
+Two foreground trees, original background branch trees retained unchanged.
