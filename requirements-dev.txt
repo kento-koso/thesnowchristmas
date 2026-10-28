@@ -1,0 +1,2 @@
+# Optional image export only; building/checking the site uses Python standard library.
+Pillow==11.3.0

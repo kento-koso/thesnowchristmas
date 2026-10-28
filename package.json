@@ -1,0 +1,21 @@
+{
+  "name": "the-snow-christmas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static event website; development tools only, no browser framework.",
+  "scripts": {
+    "dev": "python3 -m http.server 3000 --bind 0.0.0.0",
+    "build": "python3 scripts/build.py",
+    "check": "python3 scripts/check.py",
+    "test": "python3 -m unittest discover -s tests -v && node --test tests/*.test.mjs",
+    "format": "prettier --write '*.css' '*.js' 'templates/**/*.html' 'partials/*.html' 'config/*.json' 'scripts/*.mjs'",
+    "format:check": "prettier --check '*.css' '*.js' 'templates/**/*.html' 'partials/*.html' 'config/*.json' 'scripts/*.mjs'"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "postcss": "8.5.31",
+    "prettier": "3.9.10"
+  }
+}

@@ -1,216 +1,239 @@
 <!doctype html>
 <html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ありがとうございました｜THE SNOW CHRISTMAS 2026</title>
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#0E2440">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-/* お礼ページだけの演出：夜空に雪が降り、画面の下に100kgぶん積もる */
-.gift{position:relative;height:100svh;min-height:560px;overflow:hidden;color:#fff;background:linear-gradient(to bottom,#0A1B33 0%,#0E2440 45%,#1A4472 100%);cursor:pointer;-webkit-tap-highlight-color:transparent}
-.gift canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.gift__in{position:relative;z-index:2;text-shadow:0 1px 14px rgba(10,27,51,.55);height:100%;display:flex;flex-direction:column;align-items:center;padding:clamp(76px,11vh,110px) var(--gutter) 0;text-align:center;pointer-events:none}
-.gift__label{font-family:var(--f-en);font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;opacity:.7}
-.gift__kg{margin-top:10px;font-family:var(--f-en);font-weight:300;line-height:1;font-size:min(17vw,14vh,132px);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.gift__kg small{font-size:.32em;font-weight:500;margin-left:.12em;letter-spacing:0}
-.gift__now{margin-top:8px;font-size:14px;opacity:.75;transition:opacity .8s}
-.gift__msg{margin-top:4px;font-size:clamp(18px,4.4vw,26px);font-weight:700;line-height:1.6;letter-spacing:.04em;opacity:0;transform:translateY(12px);transition:opacity 1.4s,transform 1.4s}
-.gift__sub{margin-top:8px;font-size:13px;opacity:0;transition:opacity 1.4s .6s}
-.gift.is-done .gift__now{opacity:0}
-.gift.is-done .gift__msg{opacity:1;transform:none}
-.gift.is-done .gift__sub{opacity:.85}
-.gift__more{margin-top:18px;opacity:0;transition:opacity 1.4s 1.2s;pointer-events:none}
-.gift__more p{font-size:12px;opacity:.8}
-.gift__more button{margin-top:8px;font:inherit;font-family:var(--f-en);font-size:14px;font-weight:700;letter-spacing:.06em;color:#fff;background:rgba(10,27,51,.55);border:1px solid rgba(255,255,255,.85);border-radius:999px;padding:10px 24px;cursor:pointer;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-.gift__more button:active{transform:scale(.96)}
-.gift.is-done .gift__more{opacity:1;pointer-events:auto}
-.thx{padding:var(--sec-y) 0}
-.thx__body{max-width:640px}
-.thx__body .body+.body{margin-top:1em}
-.thx__acts{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
-.thx__body .cap{margin-top:24px}
-@media (prefers-reduced-motion:reduce){.gift__msg,.gift__sub,.gift__more{transition:none}}
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ありがとうございました｜THE SNOW CHRISTMAS 2026</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0E2440" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=8e20fc5221a1" />
+    <link rel="stylesheet" href="snowfund-thanks.css?v=fe027a7419b9" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="snow-placeholder.css?v=7df30855af22" />
+    <link rel="stylesheet" href="snow-header.css?v=66cce6f902eb" />
+    <link rel="stylesheet" href="site-shell.css?v=c34150d89fc5" />
+  </head>
+  <body class="site-shell" id="page-top">
+    <a class="skip-link" href="#main-content">本文へスキップ</a>
+    <!-- shared:header:start -->
 <header class="hd" id="hd">
-  <a class="hd__logo" href="./">THE SNOW CHRISTMAS 2026</a>
-  <nav class="hd__nav" aria-label="メニュー">
-    <a href="./#enjoy">楽しみかた</a>
-    <a href="./#people">つくる人</a>
-    <a href="./#venue">会場</a>
-    <a href="news.html">お知らせ</a>
-    <a href="snowfund.html">雪募金</a>
-  </nav>
-  <a class="hd__cta" href="./#plan">予定に入れる</a>
-</header>
-<main>
-  <section class="gift" id="gift" aria-label="あなたの雪が積もっていきます">
-    <canvas id="snow" aria-hidden="true"></canvas>
-    <div class="gift__in">
-      <p class="gift__label">Thank you</p>
-      <p class="gift__kg"><span id="kg">0</span><small>kg</small></p>
-      <p class="gift__now" id="now">あなたの雪が、積もっています</p>
-      <p class="gift__msg">雪を贈っていただき、<br>ありがとうございました。</p>
-      <p class="gift__sub">12月19日・20日、この雪がMEGURO MARCに降ります。</p>
-      <div class="gift__more"><p>2口以上の方は、口数の分だけ押してください</p><button type="button" id="more">＋1口（100kg）</button></div>
-    </div>
-  </section>
-
-  <section class="thx" id="thx"><div class="wrap">
-    <div class="thx__body">
-      <p class="label">Snow Fund</p>
-      <h1 class="h-sec">あなたの雪が、<br>12月19日・20日、この街に降ります。</h1>
-      <p class="body">いただいた雪募金は、MEGURO MARC の夕陽公園につくる雪の広場の雪になります。1口で雪およそ100kg。子どもたちが寝転んで、雪の天使をつくれるくらいの雪です。</p>
-      <p class="body">当日は、ぜひご家族で、ご自分の贈った雪に会いにきてください。</p>
-      <p class="body">お名前をご入力いただいた方は、雪募金のページに週1回まとめて掲載します。お支払いの控えは、ご入力いただいたメールアドレスに Square から届きます。</p>
-      <div class="thx__acts">
-        <a class="btn" href="./#plan">予定に入れる</a>
-        <a class="btn btn--line" href="./">トップへ戻る</a>
+  <a class="hd__logo" href="./#top" aria-label="THE SNOW CHRISTMAS トップ"
+    ><img
+      class="brand-official"
+      src="img/optimized/design/snow-christmas-logo.07411edf8a69.webp"
+      alt="THE SNOW CHRISTMAS"
+      width="1400"
+      height="833"
+  /></a>
+  <nav class="hd__nav" id="main-nav" aria-label="メインメニュー">
+    <div class="menu-grid">
+      <div class="menu-group">
+        <p class="menu-heading">Explore</p>
+        <a href="./#intro">About</a>
+        <a href="./#enjoy">楽しみかた</a>
+        <a href="./#people">つくる人</a>
       </div>
-      <p class="cap">お支払いについてのお問い合わせは、<a href="./#contact">お問い合わせ</a>からご連絡ください。雪募金は寄付金控除の対象ではありません。</p>
+      <div class="menu-group">
+        <p class="menu-heading">Visit</p>
+        <a href="./#venue">会場</a>
+        <a href="shops.html">出店者</a>
+        <a href="./#faq">よくある質問</a>
+      </div>
+      <div class="menu-group">
+        <p class="menu-heading">Discover</p>
+        <a href="news.html">お知らせ</a>
+      </div>
     </div>
-  </div></section>
-</main>
-<footer class="ft">
-  <div class="wrap">
+    <a class="menu-fund" href="snowfund.html">
+      <img
+        src="img/optimized/m/fund.62b3aeca9d38.webp"
+        alt=""
+        loading="lazy"
+        width="1600"
+        height="1543"
+        decoding="async"
+      />
+      <span class="menu-fund__body">
+        <span class="menu-fund__label" lang="en">SNOW FUND</span>
+        <span class="menu-fund__title">雪募金</span>
+        <span class="menu-fund__copy"
+          >この冬、まちの子どもたちに<br />雪あそびを贈りませんか。</span
+        >
+      </span>
+      <span class="menu-fund__arrow" aria-hidden="true">↗</span>
+    </a>
+    <div class="menu-social">
+      <span class="menu-social__label" lang="en">Follow us</span>
+      <a
+        href="https://www.instagram.com/meguromarc_official/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram（MEGURO MARC）・新しいタブで開く"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none" />
+        </svg>
+        <span>Instagram <small>MEGURO MARC</small></span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </nav>
+  <p class="header-date" aria-label="開催日：2026年12月19日土曜日・20日日曜日">
+    <span class="header-date__place">MEGURO MARC · 入場無料</span
+    ><span class="header-date__days"
+      ><span class="header-date__year">2026</span>12.19<small
+        >SAT</small
+      >
+      — 12.20<small>SUN</small></span
+    >
+  </p>
+  <a class="hd__cta" href="./#plan" aria-label="12月19日・20日を予定に入れる"
+    >予定に入れる <span aria-hidden="true">↗</span></a
+  >
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-controls="main-nav"
+    aria-expanded="false"
+    aria-label="メニューを開く"
+  >
+    <span></span><span></span>
+  </button>
+</header>
+<!-- shared:header:end -->
+    <main id="main-content">
+      <section class="gift" id="gift" aria-label="あなたの雪が積もっていきます">
+        <canvas id="snow" aria-hidden="true"></canvas>
+        <div class="gift__in">
+          <p class="gift__label">Thank you</p>
+          <p class="gift__kg"><span id="kg">0</span><small>kg</small></p>
+          <p class="gift__now" id="now">あなたの雪が、積もっています</p>
+          <p class="gift__msg">雪を贈っていただき、<br />ありがとうございました。</p>
+          <p class="gift__sub">12月19日・20日、この雪がMEGURO MARCに降ります。</p>
+          <div class="gift__more">
+            <p>2口以上の方は、口数の分だけ押してください</p>
+            <button type="button" id="more">＋1口（100kg）</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="thx" id="thx">
+        <div class="wrap">
+          <div class="thx__body">
+            <p class="label">Snow Fund</p>
+            <h1 class="h-sec">あなたの雪が、<br />12月19日・20日、この街に降ります。</h1>
+            <p class="body">
+              いただいた雪募金は、MEGURO MARC
+              の夕陽公園につくる雪の広場の雪になります。1口で雪およそ100kg。子どもたちが寝転んで、雪の天使をつくれるくらいの雪です。
+            </p>
+            <p class="body">当日は、ぜひご家族で、ご自分の贈った雪に会いにきてください。</p>
+            <p class="body">
+              お名前をご入力いただいた方は、雪募金のページに週1回まとめて掲載します。お支払いの控えは、ご入力いただいたメールアドレスに
+              Square から届きます。
+            </p>
+            <div class="thx__acts">
+              <a class="btn" href="./#plan">予定に入れる</a>
+              <a class="btn btn--line" href="./">トップへ戻る</a>
+            </div>
+            <p class="cap">
+              お支払いについてのお問い合わせは、<a href="./#contact">お問い合わせ</a
+              >からご連絡ください。雪募金は寄付金控除の対象ではありません。
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- shared:footer:start -->
+<footer class="ft" id="contact">
+  <div class="footer-invitation">
+    <p>See you in the snow.</p>
+    <a href="#page-top" aria-label="ページの先頭へ戻る">↑</a>
+  </div>
+  <div class="wrap ft__grid">
     <nav class="ft__menu" aria-label="メニュー">
       <a href="./">Top<small>トップ</small></a>
       <a href="./#enjoy">How to enjoy<small>楽しみかた</small></a>
+      <a href="./#people">People<small>つくる人たち</small></a>
       <a href="news.html">News<small>お知らせ</small></a>
       <a href="shops.html">Shops<small>出店者・キッチンカー</small></a>
       <a href="snowfund.html">Snow Fund<small>雪募金</small></a>
-      <a href="./#contact">Contact<small>お問い合わせ</small></a>
+      <a href="./#map">Map<small>会場マップ</small></a>
+      <a href="./#venue">Venue<small>会場・アクセス</small></a>
+      <a href="./#faq">FAQ<small>よくある質問</small></a>
     </nav>
+    <div class="ft__side">
+      <p class="label">Follow</p>
+      <ul class="sns">
+        <li>
+          <a href="https://www.instagram.com/meguromarc_official/" target="_blank" rel="noopener"
+            >Instagram（MEGURO MARC）↗</a
+          >
+        </li>
+      </ul>
+      <p class="label">Contact</p>
+      <p class="ft__lead">THE SNOW CHRISTMAS には、いろいろな関わりかたがあります。</p>
+      <div class="blank-panel">
+        <div class="blank-panel-head" aria-hidden="true">
+          <span class="blank-mark">✧</span><span class="blank-caption">COMING SOON</span>
+        </div>
+        <div class="blank-lines" aria-hidden="true">
+          <span class="blank-line"></span><span class="blank-line"></span
+          ><span class="blank-line"></span>
+        </div>
+        <p>お問い合わせ窓口は、ただいま準備中です。</p>
+      </div>
+      <form hidden class="contact" onsubmit="return false;">
+        <fieldset class="contact__kind">
+          <legend>どんなご用件ですか</legend>
+          <label
+            ><input type="radio" name="kind" value="market" checked /><span
+              >マーケットに出店したい</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="kind" value="help" /><span>運営を手伝いたい</span></label
+          >
+          <label><input type="radio" name="kind" value="sponsor" /><span>協賛したい</span></label>
+          <label><input type="radio" name="kind" value="other" /><span>その他のご質問</span></label>
+        </fieldset>
+        <!-- TODO: 送り先（Googleフォーム等）が決まるまで送信しない -->
+        <label>お名前<input type="text" name="name" autocomplete="name" /></label>
+        <label>メールアドレス<input type="email" name="email" autocomplete="email" /></label>
+        <label>お問い合わせ内容<textarea name="body" rows="4"></textarea></label>
+        <button type="submit" class="btn" disabled>送信（準備中）</button>
+      </form>
+    </div>
   </div>
   <div class="wrap ft__foot">
-    <p class="en">THE SNOW CHRISTMAS 2026　12.19 – 12.20　MEGURO MARC</p>
+    <p class="en">
+      THE SNOW CHRISTMAS 2026　12.19 – 12.20　MEGURO MARC
+    </p>
     <p>主催：THE SNOW CHRISTMAS 実行委員会　会場：MEGURO MARC（東京都品川区西五反田3-3-2）</p>
+    <!-- プライバシーポリシーは公開先確定後に追加 -->
   </div>
 </footer>
-<script>
-(function(){
-  // ヘッダー：雪の画面を過ぎたら白地に
-  var hd = document.getElementById('hd'), gift = document.getElementById('gift');
-  function onScroll(){ hd.classList.toggle('is-solid', window.scrollY > gift.offsetHeight - 60); }
-  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-
-  var cv = document.getElementById('snow'), ctx = cv.getContext('2d');
-  var kgEl = document.getElementById('kg');
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var W, H, dpr, COL = 6, cols, ground, target, room, units = 1, shown = false, flakes = [], done = false, t0 = performance.now(), last = t0;
-
-  function size(){
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = gift.clientWidth; H = gift.clientHeight;
-    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    var n = Math.ceil(W / COL) + 1, old = ground;
-    cols = n; ground = new Float32Array(n);
-    if (old) for (var i = 0; i < n; i++) ground[i] = old[Math.min(old.length - 1, Math.round(i * old.length / n))];
-    // 文字とボタンの下端より下だけに積もらせる（画面が小さくても文字が雪に埋もれないように）
-    var inner = gift.querySelector('.gift__more').getBoundingClientRect(), top = gift.getBoundingClientRect().top;
-    room = Math.max(H * 0.12, H - (inner.bottom - top) - 20);
-    target = T(units);
-  }
-  // k口ぶん積もったときの雪の平均の高さ。1口目は画面の22%、2口目からは少しずつ（文字に重ならない30%まで）
-  function T(k){ return k <= 0 ? 0 : Math.min(room * 0.8, H * 0.22) + (room * 0.92 - Math.min(room * 0.8, H * 0.22)) * (1 - Math.pow(0.7, k - 1)); }
-  function kgNow(){
-    var a = avg();
-    for (var k = 1; k <= units; k++) if (a < T(k)) return (k - 1) * 100 + Math.floor((a - T(k - 1)) / (T(k) - T(k - 1)) * 100);
-    return units * 100;
-  }
-  size(); window.addEventListener('resize', size);
-
-  function flake(x, y, burst){
-    var r = Math.random() * 2.2 + 0.8;
-    flakes.push({x:x, y:y, r:r, vy: burst ? -Math.random() * 3 - 1 : r * 1.1 + 1.4, vx: burst ? (Math.random() - .5) * 6 : 0,
-      ph: Math.random() * 6.28, sw: Math.random() * 0.8 + 0.3, a: Math.random() * 0.5 + 0.5, burst: !!burst});
-  }
-
-  function avg(){ var s = 0; for (var i = 0; i < cols; i++) s += ground[i]; return s / cols; }
-
-  function land(f){
-    if (done) return;
-    var c = Math.round(f.x / COL); if (c < 0 || c >= cols) return;
-    var add = f.r * 1.1;
-    for (var k = -3; k <= 3; k++){ var j = c + k; if (j >= 0 && j < cols) ground[j] = Math.min(room, ground[j] + add * (1 - Math.abs(k) / 4)); }
-  }
-
-  function smooth(){
-    for (var i = 1; i < cols - 1; i++){ var m = (ground[i-1] + ground[i+1]) / 2; ground[i] += (m - ground[i]) * 0.08; }
-  }
-
-  function groundY(x){ var c = Math.max(0, Math.min(cols - 1, Math.round(x / COL))); return H - ground[c]; }
-
-  function drawGround(){
-    ctx.beginPath(); ctx.moveTo(0, H);
-    for (var i = 0; i < cols; i++) ctx.lineTo(i * COL, H - ground[i]);
-    ctx.lineTo(W, H); ctx.closePath();
-    var g = ctx.createLinearGradient(0, H - target * 1.4, 0, H);
-    g.addColorStop(0, '#FFFFFF'); g.addColorStop(1, '#E3EBF5');
-    ctx.fillStyle = g; ctx.fill();
-  }
-
-  function finish(){
-    if (done) return; done = true;
-    kgEl.textContent = units * 100;
-    if (!shown){ shown = true; gift.classList.add('is-done'); }
-  }
-
-  // ＋1口：もう100kg降らせて積もらせる
-  document.getElementById('more').addEventListener('click', function(){
-    units++; target = T(units); done = false; t0 = performance.now() - 2500;
-    if (reduce){ for (var c = 0; c < cols; c++) ground[c] = target * (1 + 0.12 * Math.sin(c / 9)); ctx.clearRect(0, 0, W, H); drawGround(); finish(); }
-  });
-
-  function frame(now){
-    var el = now - t0, dt = Math.min(3, (now - last) / 16.7); last = now; // 端末の速さに左右されないよう、経過時間で動かす
-    // 降った粒だけで積もらせる。画面の幅に合わせて降る量を変え、8秒前後で100kgに届くようにする
-    var rate = (done ? 0.5 : 4 + 4 * Math.min(1, el / 2500)) * W / 430;
-    for (var s = 0; s < rate * dt; s++) if (Math.random() < 0.9) flake(Math.random() * W, -10);
-
-    ctx.clearRect(0, 0, W, H);
-    for (var i = flakes.length - 1; i >= 0; i--){
-      var f = flakes[i];
-      f.ph += 0.02 * dt;
-      if (f.burst){ f.vy += 0.08 * dt; f.vx *= Math.pow(0.97, dt); if (f.vy > f.r * 1.1 + 1.4){ f.burst = false; f.vx = 0; } }
-      f.x += (f.vx + Math.sin(f.ph) * f.sw) * dt; f.y += f.vy * dt;
-      if (f.y >= groundY(f.x) - 1){ land(f); flakes.splice(i, 1); continue; }
-      if (f.x < -20 || f.x > W + 20){ flakes.splice(i, 1); continue; }
-      ctx.globalAlpha = f.a; ctx.fillStyle = '#fff';
-      ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.283); ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-    smooth(); drawGround();
-
-    if (!done){
-      kgEl.textContent = kgNow();
-      if (avg() >= target || el > 20000) finish(); // 極端に遅い端末でも20秒で区切る
-    }
-    requestAnimationFrame(frame);
-  }
-
-  // 開いた瞬間から雪が降っているように、画面全体に散らしておく
-  for (var i0 = 0; i0 < 160; i0++) flake(Math.random() * W, Math.random() * H * 0.9);
-
-  // さわると雪が舞う
-  gift.addEventListener('pointerdown', function(e){
-    var r = gift.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
-    for (var i = 0; i < 40; i++) flake(x, y, true);
-  });
-
-  if (reduce){
-    for (var c = 0; c < cols; c++) ground[c] = target * (1 + 0.12 * Math.sin(c / 9));
-    ctx.clearRect(0, 0, W, H); drawGround(); finish();
-  } else {
-    requestAnimationFrame(frame);
-  }
-})();
-</script>
-</body>
+<!-- shared:footer:end -->
+    <script src="motion-state.js?v=c661e2a6b71f" defer></script>
+    <script src="snowfund-thanks.js?v=6b37bdec9a2a" defer></script>
+    <script src="site-shell.js?v=eb2bc281da9a" defer></script>
+  </body>
 </html>

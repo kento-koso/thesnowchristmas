@@ -1,0 +1,94 @@
+<header class="hd" id="hd">
+  <a class="hd__logo" href="{{home}}#top" aria-label="{{event.title}} トップ"
+    ><img
+      class="brand-official"
+      src="img/optimized/design/snow-christmas-logo.07411edf8a69.webp"
+      alt="{{event.title}}"
+      width="1400"
+      height="833"
+  /></a>
+  <nav class="hd__nav" id="main-nav" aria-label="メインメニュー">
+    <div class="menu-grid">
+      <div class="menu-group">
+        <p class="menu-heading">Explore</p>
+        <a href="{{home}}#intro">About</a>
+        <a href="{{home}}#enjoy">楽しみかた</a>
+        <a href="{{home}}#people">つくる人</a>
+      </div>
+      <div class="menu-group">
+        <p class="menu-heading">Visit</p>
+        <a href="{{home}}#venue">会場</a>
+        <a href="shops.html">出店者</a>
+        <a href="{{home}}#faq">よくある質問</a>
+      </div>
+      <div class="menu-group">
+        <p class="menu-heading">Discover</p>
+        <a href="news.html">お知らせ</a>
+      </div>
+    </div>
+    <a class="menu-fund" href="snowfund.html">
+      <img
+        src="img/optimized/m/fund.62b3aeca9d38.webp"
+        alt=""
+        loading="lazy"
+        width="1600"
+        height="1543"
+        decoding="async"
+      />
+      <span class="menu-fund__body">
+        <span class="menu-fund__label" lang="en">SNOW FUND</span>
+        <span class="menu-fund__title">雪募金</span>
+        <span class="menu-fund__copy"
+          >この冬、まちの子どもたちに<br />雪あそびを贈りませんか。</span
+        >
+      </span>
+      <span class="menu-fund__arrow" aria-hidden="true">↗</span>
+    </a>
+    <div class="menu-social">
+      <span class="menu-social__label" lang="en">Follow us</span>
+      <a
+        href="https://www.instagram.com/meguromarc_official/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram（MEGURO MARC）・新しいタブで開く"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none" />
+        </svg>
+        <span>Instagram <small>MEGURO MARC</small></span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </nav>
+  <p class="header-date" aria-label="開催日：{{event.dateAccessible}}">
+    <span class="header-date__place">{{event.venue}} · 入場無料</span
+    ><span class="header-date__days"
+      ><span class="header-date__year">{{event.year}}</span>{{event.startLabel}}<small
+        >{{event.startWeekday}}</small
+      >
+      — {{event.lastLabel}}<small>{{event.lastWeekday}}</small></span
+    >
+  </p>
+  <a class="hd__cta" href="{{home}}#plan" aria-label="{{event.dateShort}}を予定に入れる"
+    >予定に入れる <span aria-hidden="true">↗</span></a
+  >
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-controls="main-nav"
+    aria-expanded="false"
+    aria-label="メニューを開く"
+  >
+    <span></span><span></span>
+  </button>
+</header>

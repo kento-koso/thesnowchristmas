@@ -1,0 +1,68 @@
+<footer class="ft" id="contact">
+  <div class="footer-invitation">
+    <p>See you in the snow.</p>
+    <a href="{{top}}" aria-label="ページの先頭へ戻る">↑</a>
+  </div>
+  <div class="wrap ft__grid">
+    <nav class="ft__menu" aria-label="メニュー">
+      <a href="./">Top<small>トップ</small></a>
+      <a href="{{home}}#enjoy">How to enjoy<small>楽しみかた</small></a>
+      <a href="{{home}}#people">People<small>つくる人たち</small></a>
+      <a href="news.html">News<small>お知らせ</small></a>
+      <a href="shops.html">Shops<small>出店者・キッチンカー</small></a>
+      <a href="snowfund.html">Snow Fund<small>雪募金</small></a>
+      <a href="{{home}}#map">Map<small>会場マップ</small></a>
+      <a href="{{home}}#venue">Venue<small>会場・アクセス</small></a>
+      <a href="{{home}}#faq">FAQ<small>よくある質問</small></a>
+    </nav>
+    <div class="ft__side">
+      <p class="label">Follow</p>
+      <ul class="sns">
+        <li>
+          <a href="https://www.instagram.com/meguromarc_official/" target="_blank" rel="noopener"
+            >Instagram（{{event.venue}}）↗</a
+          >
+        </li>
+      </ul>
+      <p class="label">Contact</p>
+      <p class="ft__lead">{{event.title}} には、いろいろな関わりかたがあります。</p>
+      <div class="blank-panel">
+        <div class="blank-panel-head" aria-hidden="true">
+          <span class="blank-mark">✧</span><span class="blank-caption">COMING SOON</span>
+        </div>
+        <div class="blank-lines" aria-hidden="true">
+          <span class="blank-line"></span><span class="blank-line"></span
+          ><span class="blank-line"></span>
+        </div>
+        <p>お問い合わせ窓口は、ただいま準備中です。</p>
+      </div>
+      <form hidden class="contact" onsubmit="return false;">
+        <fieldset class="contact__kind">
+          <legend>どんなご用件ですか</legend>
+          <label
+            ><input type="radio" name="kind" value="market" checked /><span
+              >マーケットに出店したい</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="kind" value="help" /><span>運営を手伝いたい</span></label
+          >
+          <label><input type="radio" name="kind" value="sponsor" /><span>協賛したい</span></label>
+          <label><input type="radio" name="kind" value="other" /><span>その他のご質問</span></label>
+        </fieldset>
+        <!-- TODO: 送り先（Googleフォーム等）が決まるまで送信しない -->
+        <label>お名前<input type="text" name="name" autocomplete="name" /></label>
+        <label>メールアドレス<input type="email" name="email" autocomplete="email" /></label>
+        <label>お問い合わせ内容<textarea name="body" rows="4"></textarea></label>
+        <button type="submit" class="btn" disabled>送信（準備中）</button>
+      </form>
+    </div>
+  </div>
+  <div class="wrap ft__foot">
+    <p class="en">
+      {{event.title}} {{event.year}}　{{event.startLabel}} – {{event.lastLabel}}　{{event.venue}}
+    </p>
+    <p>主催：{{event.title}} 実行委員会　会場：{{event.venue}}（{{event.address}}）</p>
+    <!-- プライバシーポリシーは公開先確定後に追加 -->
+  </div>
+</footer>
