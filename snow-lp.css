@@ -1818,6 +1818,37 @@
   pointer-events: none;
   transform-origin: 50% 70%;
 }
+.kv__props {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  transform-origin: 50% 65%;
+}
+.kv__prop {
+  position: absolute;
+  inset: 0;
+}
+.kv__prop img {
+  position: absolute;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+.kv__prop--snowman img {
+  /* Browser presentation correction for the broad horizontal render.
+     Anchor at the native snow contact point so the feet do not lift. */
+  transform: scaleY(1.15);
+  transform-origin: 83.854167% 87.037037%;
+}
+.motion-ready .kv__props {
+  will-change: transform;
+}
+.kv--official:has(.kv__props) .hero-seal {
+  bottom: 24%;
+}
 .kv__crystals img {
   width: 100%;
   height: 100%;
@@ -2319,6 +2350,9 @@
 }
 
 /* The main invitation has its own icy detail within the shared button shape. */
+.hero-action {
+  display: contents;
+}
 .snow-lp .hero-link {
   position: relative;
   isolation: isolate;
@@ -2392,6 +2426,31 @@
   outline-offset: 5px;
 }
 @media (max-width: 760px) {
+  .hero-action {
+    display: inline-block;
+    position: relative;
+    max-width: calc(100% - 24px);
+    margin-top: 48px;
+  }
+  .snow-lp .kv--official .hero-action .hero-link {
+    margin-top: 0;
+  }
+  .snow-lp .kv--official .hero-action .hero-seal {
+    top: -45px;
+    right: -18px;
+    bottom: auto;
+    left: auto;
+    width: 68px;
+    height: 68px;
+    z-index: 4;
+    pointer-events: none;
+    transform: rotate(11deg);
+    outline-offset: -5px;
+  }
+  .hero-action .hero-seal b {
+    font-size: 14px;
+    margin: 3px 0;
+  }
   .snow-lp .hero-link {
     min-height: 70px;
     padding: 13px 18px 13px 30px;

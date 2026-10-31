@@ -1,6 +1,9 @@
 {
   "optimizedImagesBytes": 3300000,
   "files": {
+    "img/motion/marc-gifts.webp": 40000,
+    "img/motion/marc-gifts-mobile.webp": 40000,
+    "img/motion/marc-snowman.webp": 50000,
     "img/optimized/design/snow-christmas-logo.07411edf8a69.webp": 450000,
     "snow-motion.js": 19000,
     "snow-lp.css": 52000,
