@@ -19,7 +19,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="snow-placeholder.css?v=7df30855af22" />
-    <link rel="stylesheet" href="snow-header.css?v=66cce6f902eb" />
+    <link rel="stylesheet" href="snow-header.css?v=027437d4758c" />
     <link rel="stylesheet" href="site-shell.css?v=c34150d89fc5" />
   </head>
   <body class="site-shell" id="page-top">
@@ -106,9 +106,36 @@
       — 12.20<small>SUN</small></span
     >
   </p>
-  <a class="hd__cta" href="./#plan" aria-label="12月19日・20日を予定に入れる"
-    >予定に入れる <span aria-hidden="true">↗</span></a
-  >
+  <a class="hd__cta" href="./#plan" aria-label="12月19日・20日を予定に入れる">
+    <!-- Lucide calendar-days; ISC license: licenses/lucide.txt -->
+    <svg
+      class="hd__calendar-icon"
+      aria-hidden="true"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M8 2v3" />
+      <path d="M16 2v3" />
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 9h18" />
+      <path d="M8 13h.01" />
+      <path d="M12 13h.01" />
+      <path d="M16 13h.01" />
+      <path d="M8 17h.01" />
+      <path d="M12 17h.01" />
+      <path d="M16 17h.01" />
+    </svg>
+    <span class="hd__cta-label">予定に入れる</span>
+    <span class="hd__cta-arrow" aria-hidden="true">↗</span>
+  </a>
   <button
     class="menu-toggle"
     type="button"

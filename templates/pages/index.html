@@ -100,6 +100,15 @@
               height="1080"
           /></picture>
           <canvas class="kv__market-lights" aria-hidden="true"></canvas>
+          <div class="kv__props" aria-hidden="true">
+            <picture class="kv__prop kv__prop--gifts">
+              <source media="(max-width: 760px)" srcset="img/motion/marc-gifts-mobile.webp" />
+              <img src="img/motion/marc-gifts.webp" alt="" width="1920" height="1080" />
+            </picture>
+            <picture class="kv__prop kv__prop--snowman">
+              <img src="img/motion/marc-snowman.webp" alt="" width="1920" height="1080" />
+            </picture>
+          </div>
 
           <picture class="kv__crystals" aria-hidden="true"
             ><source
@@ -191,12 +200,15 @@
                   height="16" /></span
               ><span>（{{event.shortAddress}}）</span>
             </p>
-            <a class="hero-link" href="#enjoy"
-              ><i class="hero-link__crystal" aria-hidden="true"></i
-              ><span class="hero-link__label"
-                ><small aria-hidden="true">EXPLORE THE SNOW</small>イベントの楽しみかたを見る</span
-              ><span class="hero-link__arrow" aria-hidden="true">↓</span></a
-            >
+            <div class="hero-action">
+              <a class="hero-link" href="#enjoy"
+                ><i class="hero-link__crystal" aria-hidden="true"></i
+                ><span class="hero-link__label"
+                  ><small aria-hidden="true">EXPLORE THE SNOW</small
+                  >イベントの楽しみかたを見る</span
+                ><span class="hero-link__arrow" aria-hidden="true">↓</span></a
+              >
+            </div>
           </div>
           <div class="hero-seal">
             <span>WELCOME<br />TO OUR TOWN</span><b>入場無料</b>
