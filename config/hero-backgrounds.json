@@ -1,0 +1,25 @@
+{
+  "version": "2026-11-01-market-snowmen-removed",
+  "master": "v89 MARC_FINAL.blend",
+  "method": "Supplied native replacement plate in original compositor; scaled to web dimensions before compositing. Falling snow, volume and crystals disabled. JPEG quality 94, 4:4:4; WebP via optimize-images.py.",
+  "files": [
+    {
+      "output": "img/motion/marc-scene.jpg",
+      "dimensions": [1920, 1080],
+      "sha256": "c6d4145aa2b9e2c642036d29e53fd8808e8e6b7b0a5b2e061f18f49f193cff6c",
+      "bytes": 787156,
+      "scene": "FINAL_16x9_center_COMPOSITE",
+      "nativePlate": "market_snowmen_removal_v74_20261101/patched_plates/16x9_center/TREE_GARDEN.exr",
+      "nativePlateSha256": "15c43fb24af5892fb4a3b2c9bbd0d391a804978b7877fda8261fc30e46c986df"
+    },
+    {
+      "output": "img/motion/marc-scene-mobile.jpg",
+      "dimensions": [1023, 1440],
+      "sha256": "584e526a709645816e0d4f40fbf9968f9427c137667d00826f189b1fba12e325",
+      "bytes": 641838,
+      "scene": "FINAL_A3_COMPOSITE",
+      "nativePlate": "market_snowmen_removal_v74_20261101/patched_plates/A3/TREE_GARDEN.exr",
+      "nativePlateSha256": "9e0953c409ad82c807acc9e469128b796c8913c2984b9e8679b76c0168bc807b"
+    }
+  ]
+}
