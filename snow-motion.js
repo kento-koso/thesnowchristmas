@@ -11,6 +11,10 @@
   var toggle = hero.querySelector('.motion-toggle');
   var art = hero.querySelector('.kv__art');
   var sceneImage = art.querySelector('img');
+  var props = hero.querySelector('.kv__props');
+  var giftProp = hero.querySelector('.kv__prop--gifts');
+  var snowmanProp = hero.querySelector('.kv__prop--snowman');
+  var propOffsets = [0, 0];
   var lightCanvas = hero.querySelector('.kv__market-lights');
   var lightCtx = lightCanvas && lightCanvas.getContext('2d');
   var shopLights = [],
@@ -22,6 +26,7 @@
   var desktop = window.matchMedia('(min-width: 1024px)');
   var copy = hero.querySelector('.kv__in');
   var seal = hero.querySelector('.hero-seal');
+  var heroAction = hero.querySelector('.hero-action');
   var scrollHint = hero.querySelector('.hero-scroll');
   var pointerFine = window.matchMedia('(hover: hover) and (pointer: fine)');
   var paused = window.SnowMotion.paused;
@@ -82,6 +87,15 @@
     };
   }
   function resize() {
+    // Attach the single badge to the mobile CTA so wrapping and font loading
+    // cannot separate them. Restore its original desktop position on resize.
+    if (heroAction && seal) {
+      if (window.matchMedia('(max-width: 760px)').matches) {
+        if (seal.parentElement !== heroAction) heroAction.appendChild(seal);
+      } else if (seal.parentElement !== hero) {
+        hero.insertBefore(seal, scrollHint);
+      }
+    }
     width = hero.clientWidth;
     height = hero.clientHeight;
     ratio = Math.min(window.devicePixelRatio || 1, 1.75);
@@ -93,6 +107,7 @@
       return particle(true);
     });
     readScroll();
+    placeProps();
     if (lightCtx) {
       lightCanvas.width = canvas.width;
       lightCanvas.height = canvas.height;
@@ -100,6 +115,54 @@
       drawShopLights();
     }
     if (paused) drawSnow(0, 0);
+  }
+  function placeProps() {
+    if (!props) return;
+    // Camera-frame foot positions, projected through the same cover fit as the
+    // background. Rock around the snow surface, rather than floating above it.
+    var mobile = window.matchMedia('(max-width: 760px)').matches;
+    var sourceWidth = mobile ? 4180 : 5760;
+    var sourceHeight = mobile ? 5880 : 3240;
+    var fit = Math.max(width / sourceWidth, height / sourceHeight);
+    var offsetX = (width - sourceWidth * fit) / 2;
+    var offsetY = height - sourceHeight * fit;
+    // Cover cropping can cut native edge props on phones and portrait tablets.
+    // Bring each complete silhouette inside the frame, including its shadow.
+    var edges = mobile ? [346, 3800] : [668, 5449];
+    propOffsets = [
+      Math.max(0, 24 - (offsetX + edges[0] * fit)),
+      Math.min(0, width - 24 - (offsetX + edges[1] * fit))
+    ];
+    var feet = mobile
+      ? [
+          [980, 5240],
+          [3190, 5150]
+        ]
+      : [
+          [1190, 2900],
+          [4830, 2820]
+        ];
+    [giftProp, snowmanProp].forEach(function (prop, index) {
+      // Size the actual image to the full cover frame before translating it.
+      // object-fit alone would permanently clip edge props inside the img box.
+      var image = prop.querySelector('img');
+      image.style.width = sourceWidth * fit + 'px';
+      image.style.height = sourceHeight * fit + 'px';
+      image.style.left = offsetX + 'px';
+      image.style.top = offsetY + 'px';
+      if (mobile && index === 1) {
+        // Fit the horizontal snowman into the portrait foot position. Its
+        // visual proportion correction is scoped to the image in snow-lp.css.
+        var snowmanFit = fit * 2;
+        image.style.width = 5760 * snowmanFit + 'px';
+        image.style.height = 3240 * snowmanFit + 'px';
+        image.style.left = offsetX + feet[index][0] * fit - 4830 * snowmanFit + 'px';
+        image.style.top = offsetY + feet[index][1] * fit - 2820 * snowmanFit + 'px';
+      }
+      prop.style.transformOrigin =
+        offsetX + feet[index][0] * fit + 'px ' + (offsetY + feet[index][1] * fit) + 'px';
+      prop.style.transform = 'translateX(' + propOffsets[index] + 'px)';
+    });
   }
   function buildShopLights() {
     if (!lightCtx || !sceneImage.complete || !sceneImage.naturalWidth) return;
@@ -321,6 +384,23 @@
     if (lightCanvas) {
       lightCanvas.style.transform = art.style.transform;
       drawShopLights();
+    }
+    if (props) {
+      // Share the scenery camera to preserve native contact shadows. Tiny,
+      // independent rocking adds life without downloading a live 3D scene.
+      props.style.transform = art.style.transform;
+      giftProp.style.transform =
+        'translateX(' +
+        propOffsets[0] +
+        'px) rotate(' +
+        Math.sin((elapsed * Math.PI) / 5.8) * 0.65 +
+        'deg)';
+      snowmanProp.style.transform =
+        'translateX(' +
+        propOffsets[1] +
+        'px) rotate(' +
+        Math.sin((elapsed * Math.PI) / 4.8) * 1.15 +
+        'deg)';
     }
     crystals.style.transform =
       'translate3d(' +

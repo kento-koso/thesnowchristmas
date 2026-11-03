@@ -1,0 +1,32 @@
+[
+  {
+    "path": "img/motion/marc-gifts.webp",
+    "source": "props_v55_16x9/layers/17_foreground_props.png",
+    "sourceSha256": "56d97b621ae1b0500c0fa76542d652cf4a3be5bbfee0af771282f983a7ead3da",
+    "outputSha256": "b5989bf9a9ce6c234a9fc2ca0f4ff92d2df16e05423884993140e27117877f41",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 22278,
+    "encoding": "WebP quality 90; full camera frame; original contact shadows"
+  },
+  {
+    "path": "img/motion/marc-snowman.webp",
+    "source": "props_v55_16x9/layers/17_foreground_props.png",
+    "sourceSha256": "56d97b621ae1b0500c0fa76542d652cf4a3be5bbfee0af771282f983a7ead3da",
+    "outputSha256": "7c93676bc583b186ce5991bf23013ed6c628f0d5babade1d4ac55b401aa0c2cc",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 24488,
+    "encoding": "WebP quality 90; full camera frame; original contact shadows"
+  },
+  {
+    "path": "img/motion/marc-gifts-mobile.webp",
+    "source": "props_v54_A3/layers/17_foreground_props.png",
+    "sourceSha256": "fcd4b35cf760d7fe948ce0a5d5aa27c534c16c9ae33dc1a1cece1e25d19c1d4c",
+    "outputSha256": "a8eaa311007e56f9901f9051c047efb8fcf9b04685de570e696f1167e1cc5507",
+    "width": 1023,
+    "height": 1440,
+    "bytes": 32158,
+    "encoding": "WebP quality 90; full camera frame; original contact shadows"
+  }
+]

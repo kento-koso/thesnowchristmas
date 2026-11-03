@@ -88,17 +88,17 @@
     "mode": "lossless"
   },
   "img/motion/marc-scene-mobile.jpg": {
-    "path": "img/optimized/motion/marc-scene-mobile.c93bfc0d2096.webp",
-    "sourceBytes": 455859,
-    "outputBytes": 215108,
+    "path": "img/optimized/motion/marc-scene-mobile.584e526a7096.webp",
+    "sourceBytes": 641838,
+    "outputBytes": 292970,
     "width": 1023,
     "height": 1440,
     "mode": "quality-88"
   },
   "img/motion/marc-scene.jpg": {
-    "path": "img/optimized/motion/marc-scene.712f6633fe08.webp",
-    "sourceBytes": 622281,
-    "outputBytes": 305626,
+    "path": "img/optimized/motion/marc-scene.c6d4145aa2b9.webp",
+    "sourceBytes": 787156,
+    "outputBytes": 363928,
     "width": 1920,
     "height": 1080,
     "mode": "quality-88"

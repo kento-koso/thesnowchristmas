@@ -35,16 +35,16 @@
     <link
       rel="preload"
       as="image"
-      href="img/optimized/motion/marc-scene.712f6633fe08.webp"
+      href="img/optimized/motion/marc-scene.c6d4145aa2b9.webp"
       media="(min-width: 761px)"
     />
     <link
       rel="preload"
       as="image"
-      href="img/optimized/motion/marc-scene-mobile.c93bfc0d2096.webp"
+      href="img/optimized/motion/marc-scene-mobile.584e526a7096.webp"
       media="(max-width: 760px)"
     />
-    <link rel="stylesheet" href="snow-lp.css?v=bbcc14570cb4" />
+    <link rel="stylesheet" href="snow-lp.css?v=d8e5c41d08ee" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -70,8 +70,8 @@
       }
     </script>
     <link rel="stylesheet" href="snow-placeholder.css?v=7df30855af22" />
-    <link rel="stylesheet" href="snow-world.css?v=f1ed5bb9e08f" />
-    <link rel="stylesheet" href="snow-header.css?v=66cce6f902eb" />
+    <link rel="stylesheet" href="snow-world.css?v=d4f251c8c420" />
+    <link rel="stylesheet" href="snow-header.css?v=027437d4758c" />
     <link rel="stylesheet" href="site-shell.css?v=c34150d89fc5" />
     <link rel="stylesheet" href="people.css?v=35d9bbc16eaa" />
     <link rel="stylesheet" href="calendar.css?v=03b73ac9c499" />
@@ -162,9 +162,36 @@
       — 12.20<small>SUN</small></span
     >
   </p>
-  <a class="hd__cta" href="#plan" aria-label="12月19日・20日を予定に入れる"
-    >予定に入れる <span aria-hidden="true">↗</span></a
-  >
+  <a class="hd__cta" href="#plan" aria-label="12月19日・20日を予定に入れる">
+    <!-- Lucide calendar-days; ISC license: licenses/lucide.txt -->
+    <svg
+      class="hd__calendar-icon"
+      aria-hidden="true"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M8 2v3" />
+      <path d="M16 2v3" />
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 9h18" />
+      <path d="M8 13h.01" />
+      <path d="M12 13h.01" />
+      <path d="M16 13h.01" />
+      <path d="M8 17h.01" />
+      <path d="M12 17h.01" />
+      <path d="M16 17h.01" />
+    </svg>
+    <span class="hd__cta-label">予定に入れる</span>
+    <span class="hd__cta-arrow" aria-hidden="true">↗</span>
+  </a>
   <button
     class="menu-toggle"
     type="button"
@@ -184,16 +211,25 @@
           <picture class="kv__art"
             ><source
               media="(max-width: 760px)"
-              srcset="img/optimized/motion/marc-scene-mobile.c93bfc0d2096.webp" />
+              srcset="img/optimized/motion/marc-scene-mobile.584e526a7096.webp" />
             <img
               class="kv__bg"
-              src="img/optimized/motion/marc-scene.712f6633fe08.webp"
+              src="img/optimized/motion/marc-scene.c6d4145aa2b9.webp"
               alt=""
               fetchpriority="high"
               width="1920"
               height="1080"
           /></picture>
           <canvas class="kv__market-lights" aria-hidden="true"></canvas>
+          <div class="kv__props" aria-hidden="true">
+            <picture class="kv__prop kv__prop--gifts">
+              <source media="(max-width: 760px)" srcset="img/motion/marc-gifts-mobile.webp" />
+              <img src="img/motion/marc-gifts.webp" alt="" width="1920" height="1080" />
+            </picture>
+            <picture class="kv__prop kv__prop--snowman">
+              <img src="img/motion/marc-snowman.webp" alt="" width="1920" height="1080" />
+            </picture>
+          </div>
 
           <picture class="kv__crystals" aria-hidden="true"
             ><source
@@ -285,12 +321,15 @@
                   height="16" /></span
               ><span>（品川区西五反田3-3-2）</span>
             </p>
-            <a class="hero-link" href="#enjoy"
-              ><i class="hero-link__crystal" aria-hidden="true"></i
-              ><span class="hero-link__label"
-                ><small aria-hidden="true">EXPLORE THE SNOW</small>イベントの楽しみかたを見る</span
-              ><span class="hero-link__arrow" aria-hidden="true">↓</span></a
-            >
+            <div class="hero-action">
+              <a class="hero-link" href="#enjoy"
+                ><i class="hero-link__crystal" aria-hidden="true"></i
+                ><span class="hero-link__label"
+                  ><small aria-hidden="true">EXPLORE THE SNOW</small
+                  >イベントの楽しみかたを見る</span
+                ><span class="hero-link__arrow" aria-hidden="true">↓</span></a
+              >
+            </div>
           </div>
           <div class="hero-seal">
             <span>WELCOME<br />TO OUR TOWN</span><b>入場無料</b>
@@ -1685,7 +1724,7 @@
     <script src="motion-state.js?v=c661e2a6b71f" defer></script>
     <script src="button-snow.js?v=c9beffdf19ab" defer></script>
     <script src="main.js?v=041c01cb9d9a" defer></script>
-    <script src="snow-motion.js?v=b4ed5e56eb17" defer></script>
+    <script src="snow-motion.js?v=0b98853d93c6" defer></script>
     <script src="snow-logo.js?v=fa813dc5dcc3" defer></script>
     <script src="snow-atmosphere.js?v=19b66877198c" defer></script>
     <script src="site-shell.js?v=eb2bc281da9a" defer></script>

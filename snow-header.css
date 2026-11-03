@@ -580,3 +580,35 @@ html.menu-open body {
     font-size: 10px;
   }
 }
+
+/* Mobile calendar action: retain the accessible name and the existing destination. */
+.site-shell .hd__calendar-icon {
+  display: none;
+  flex-shrink: 0;
+}
+.site-shell .hd__cta .hd__cta-label {
+  font: inherit;
+}
+@media (max-width: 760px) {
+  .site-shell .hd__cta,
+  .site-shell .is-solid .hd__cta {
+    top: 18px;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    --button-radius: 50%;
+    border-radius: 50%;
+    padding: 0;
+    gap: 0;
+    justify-content: center;
+  }
+  .site-shell .hd__cta .hd__cta-label,
+  .site-shell .hd__cta .hd__cta-arrow {
+    display: none;
+  }
+  .site-shell .hd__calendar-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+}
