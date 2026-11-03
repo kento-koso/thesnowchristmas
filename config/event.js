@@ -12,6 +12,7 @@ window.SnowEvent = Object.freeze({
   "calendarStamp": "20261015T000000Z",
   "donationUrl": "https://square.link/u/0BWJTz8L",
   "donationCloseDate": "2026-12-20",
+  "contactEmail": "info@thesnowchristmas.com",
   "year": "2026",
   "startLabel": "12.19",
   "lastLabel": "12.20",
