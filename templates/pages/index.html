@@ -17,9 +17,21 @@
       content="{{event.year}}.{{event.startLabel}} {{event.startWeekday}} – {{event.lastDay}} {{event.lastWeekday}}／{{event.venue}}（品川区西五反田）／入場無料"
     />
     <meta property="og:url" content="{{event.url}}" />
-    <meta property="og:image" content="{{event.url}}img/optimized/ogp.501588272e2b.webp" />
+    <meta property="og:image" content="{{event.url}}img/ogp.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="{{event.title}} {{event.year}}　12.19 sat – 20 sun　MEGURO MARC"
+    />
+    <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{event.url}}img/ogp.jpg" />
     <meta name="theme-color" content="#1a4472" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
     <!-- TODO: GA4（測定IDが決まったら）。QRごとに utm_source を分ける -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,25 +60,85 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Event",
-        "name": "{{event.title}} {{event.year}}",
-        "startDate": "{{event.startDate}}",
-        "endDate": "{{event.lastDate}}",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "isAccessibleForFree": true,
-        "location": {
-          "@type": "Place",
-          "name": "{{event.venue}}",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "JP",
-            "addressRegion": "東京都",
-            "addressLocality": "品川区",
-            "streetAddress": "西五反田3-3-2"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "{{event.url}}#website",
+            "url": "{{event.url}}",
+            "name": "{{event.title}}",
+            "inLanguage": "ja"
+          },
+          {
+            "@type": "Event",
+            "@id": "{{event.url}}#event",
+            "name": "{{event.title}} {{event.year}}",
+            "alternateName": "ザ・スノークリスマス",
+            "description": "{{event.dateJapanese}}、{{event.venue}}（東京都品川区西五反田）の夕陽公園に本物の雪の広場ができる、入場無料の冬のまちのお祭り。雪あそび、金メダリスト木村葵来選手のトークショー、クリスマスマーケットとキッチンカー、カフェ、アートワークショップと展示。",
+            "url": "{{event.url}}",
+            "image": ["{{event.url}}img/ogp.jpg"],
+            "startDate": "{{event.startDate}}",
+            "endDate": "{{event.lastDate}}",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "isAccessibleForFree": true,
+            "inLanguage": "ja",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "JPY",
+              "availability": "https://schema.org/InStock",
+              "url": "{{event.url}}"
+            },
+            "location": {
+              "@type": "Place",
+              "name": "{{event.venue}}",
+              "url": "https://meguromarc.net/",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "JP",
+                "addressRegion": "東京都",
+                "addressLocality": "品川区",
+                "streetAddress": "西五反田3-3-2"
+              }
+            },
+            "organizer": {
+              "@type": "Organization",
+              "name": "{{event.title}} 実行委員会",
+              "url": "{{event.url}}",
+              "email": "{{event.contactEmail}}"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "{{event.url}}#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "入場料はかかりますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "入場は無料です。マーケット・キッチンカー・カフェでのお買いものは、各店でお支払いください。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "雪あそびに持っていくものは？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ソリやスコップなどのおもちゃは無料で貸し出します。手ぶらで遊べます。雪で濡れるので、手袋と着替えがあると安心です。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "クリスマスツリーはいつ見られますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "12月10日（木）から26日（土）まで、{{event.venue}} の中央に立っています。夜は灯りがともります。"
+                }
+              }
+            ]
           }
-        },
-        "organizer": { "@type": "Organization", "name": "{{event.title}} 実行委員会" }
+        ]
       }
     </script>
     <link rel="stylesheet" href="snow-placeholder.css" />
