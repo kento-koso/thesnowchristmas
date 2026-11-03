@@ -9,6 +9,8 @@
       content="{{event.dateJapanese}}、{{event.venue}}（品川区西五反田）に本物の雪の広場ができます。金メダリストのトークショー、マーケット、アートワークショップも。入場無料。"
     />
     <link rel="canonical" href="{{event.url}}" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="thumbnail" content="{{event.url}}img/ogp.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="{{event.title}}" />
     <meta property="og:title" content="{{event.title}} {{event.year}}｜雪が降る。この街に。" />
@@ -67,6 +69,21 @@
             "url": "{{event.url}}",
             "name": "{{event.title}}",
             "inLanguage": "ja"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "{{event.url}}#webpage",
+            "url": "{{event.url}}",
+            "name": "{{event.title}} {{event.year}}｜雪が降る。この街に。",
+            "isPartOf": { "@id": "{{event.url}}#website" },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "{{event.url}}img/ogp.jpg",
+              "width": 1200,
+              "height": 630
+            },
+            "thumbnailUrl": "{{event.url}}img/ogp.jpg",
+            "about": { "@id": "{{event.url}}#event" }
           },
           {
             "@type": "Event",
