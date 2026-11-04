@@ -64,7 +64,7 @@
 .people-cards {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 24px;
   align-items: start;
   padding-bottom: 10px;
@@ -95,6 +95,10 @@
 .people-card:nth-child(5) {
   margin-top: 90px;
   transform: rotate(-5deg);
+}
+.people-card:nth-child(6) {
+  margin-top: 40px;
+  transform: rotate(-2deg);
 }
 .people-clip {
   position: absolute;
@@ -208,7 +212,7 @@
     padding-right: 32px;
   }
   .people-scene {
-    width: 1000px;
+    width: 1180px;
   }
 }
 @media (max-width: 760px) {
