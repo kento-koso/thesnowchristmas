@@ -126,5 +126,13 @@
     "width": 1000,
     "height": 1000,
     "mode": "quality-88"
+  },
+  "img/talk/kimata_official.jpg": {
+    "path": "img/optimized/talk/kimata_official.9a58403f17f5.webp",
+    "sourceBytes": 68002,
+    "outputBytes": 31574,
+    "width": 679,
+    "height": 679,
+    "mode": "quality-88"
   }
 }
