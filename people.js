@@ -5,6 +5,8 @@
   var opener;
   var backdropPressed = false;
   var photo = dialog.querySelector('.people-dialog-photo');
+  var profileBox = document.getElementById('people-dialog-profile');
+  var pending = dialog.querySelector('.people-dialog-pending');
   document.querySelectorAll('.people-open').forEach(function (button) {
     button.addEventListener('click', function () {
       var card = button.closest('.people-card');
@@ -16,6 +18,15 @@
       document.getElementById('people-dialog-number').textContent =
         card.querySelector('.people-number').textContent;
       photo.replaceChildren(card.querySelector('.people-portrait').cloneNode(true));
+      var profile = card.querySelector('template.people-profile');
+      profileBox.replaceChildren();
+      if (profile) profileBox.appendChild(profile.content.cloneNode(true));
+      profileBox.hidden = !profile;
+      pending.hidden = !!profile;
+      dialog.setAttribute(
+        'aria-describedby',
+        profile ? 'people-dialog-profile' : 'people-dialog-status'
+      );
       dialog.showModal();
       window.SnowMotion.setSuspended('people', true);
       dialog.scrollTop = 0;
