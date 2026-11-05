@@ -402,6 +402,19 @@
   color: #607f94;
   margin-top: 9px;
 }
+.people-dialog-profile {
+  margin-top: 26px;
+  text-align: left;
+  font: 13px/2 var(--f-ja);
+  color: #2f536c;
+}
+.people-dialog-profile p + p {
+  margin-top: 12px;
+}
+.people-dialog-profile .people-profile-meta {
+  font-size: 12px;
+  color: #607f94;
+}
 .people-dialog-pending {
   margin-top: 32px;
   padding: 25px 22px;
