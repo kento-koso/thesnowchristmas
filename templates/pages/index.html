@@ -322,8 +322,9 @@
         <div class="wrap intro-layout">
           <div class="intro-story">
             <p class="label">A winter to remember</p>
-            <h2 class="intro__copy" id="intro-h">雪が降る。この街に。</h2>
-            <p class="intro-hand">Let it snow, let us smile.</p>
+            <h2 class="intro__copy" id="intro-h">
+              <span class="nowrap">雪が降る。</span><span class="nowrap">この街に。</span>
+            </h2>
             <div class="intro__body">
               <p>
                 雪はやさしい。<br />雪はキレイ。<br />雪はやわらかい。<br />雪はなつかしい。<br />雪はつめたい、<br />そして温かい。
@@ -405,8 +406,9 @@
 
         <div class="wrap program-heading">
           <p class="label">Find your winter favorites</p>
-          <h2 class="section-display" id="enjoy-h">A little winter magic.</h2>
-          <p class="section-subtitle">{{event.title}} の楽しみかた</p>
+          <h2 class="section-display section-display--ja" id="enjoy-h">
+            <span class="nowrap">{{event.title}}</span> <span class="nowrap">の楽しみかた</span>
+          </h2>
           <nav class="program-nav" aria-label="プログラム">
             <a href="#snowpark">01 雪あそび</a><a href="#talk">02 トーク</a
             ><a href="#market">03 マーケット</a><a href="#cafe">04 カフェ</a
@@ -762,7 +764,11 @@
           </div>
           <div class="plan__box">
             <p class="date-invitation-label">LET’S MAKE A WINTER MEMORY</p>
-            <h3 class="date-invitation-title">カレンダーに入れて、<br />あとは当日、来るだけ。</h3>
+            <h3 class="date-invitation-title">
+              <span class="nowrap">カレンダーに入れて、</span><br /><span class="nowrap"
+                >あとは当日、</span
+              ><span class="nowrap">来るだけ。</span>
+            </h3>
             <p class="opening-note">開場時間は11月上旬にお知らせします。</p>
             <div class="plan__btns">
               <a class="btn" href="#" id="calGoogle" target="_blank" rel="noopener"
@@ -1074,8 +1080,7 @@
         </figure>
         <div class="venue__txt">
           <p class="label">Venue</p>
-          <h2 class="section-display" id="venue-h">Meet us here.</h2>
-          <p class="section-subtitle">会場について｜{{event.venue}}</p>
+          <h2 class="section-display section-display--ja" id="venue-h">会場について</h2>
           <p class="venue-name">{{event.venue}}</p>
           <p class="venue-address">{{event.address}}</p>
           <p class="body">

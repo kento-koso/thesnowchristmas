@@ -510,6 +510,16 @@
   font: 500 clamp(42px, 5vw, 65px)/1.05 var(--serif);
   letter-spacing: -0.025em;
 }
+/* 日本語の見出し（11/6 英文の見出しを日本語に置き換え） */
+/* 見出しは語句の切れ目でだけ改行する（1文字だけ次の行に落ちないように） */
+.snow-lp .nowrap {
+  white-space: nowrap;
+}
+.section-display--ja {
+  font-family: var(--jp-serif);
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
 .section-subtitle {
   font-family: var(--jp-serif);
   font-size: 15px;
@@ -2601,5 +2611,19 @@
   }
   .snow-lp .kv--official .kv__date .hero-year {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .section-display.section-display--ja,
+  .snow-lp .venue .section-display.section-display--ja {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 360px) {
+  .snow-lp .section-display.section-display--ja,
+  .snow-lp .date-invitation-title {
+    font-size: 22px;
   }
 }
