@@ -583,6 +583,17 @@
 .intro-story {
   min-width: 0;
 }
+/* 紹介文は PC でも中央揃え（11/6 高祖） */
+.intro-story {
+  text-align: center;
+}
+.intro-story .intro-save {
+  margin-left: auto;
+  margin-right: auto;
+}
+.intro-story .intro-save-date {
+  justify-content: center;
+}
 @media (max-width: 760px) {
   .snow-lp .intro-layout {
     grid-template-columns: minmax(0, 1fr);
