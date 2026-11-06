@@ -511,7 +511,8 @@
   letter-spacing: -0.025em;
 }
 /* 日本語の見出し（11/6 英文の見出しを日本語に置き換え） */
-.section-display--ja .nowrap {
+/* 見出しは語句の切れ目でだけ改行する（1文字だけ次の行に落ちないように） */
+.snow-lp .nowrap {
   white-space: nowrap;
 }
 .section-display--ja {
@@ -2617,5 +2618,12 @@
   .section-display.section-display--ja,
   .snow-lp .venue .section-display.section-display--ja {
     font-size: 26px;
+  }
+}
+
+@media (max-width: 360px) {
+  .snow-lp .section-display.section-display--ja,
+  .snow-lp .date-invitation-title {
+    font-size: 22px;
   }
 }
