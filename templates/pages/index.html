@@ -16,7 +16,7 @@
     <meta property="og:title" content="{{event.title}} {{event.year}}｜雪が降る。この街に。" />
     <meta
       property="og:description"
-      content="{{event.year}}.{{event.startLabel}} {{event.startWeekday}} – {{event.lastDay}} {{event.lastWeekday}}／{{event.venue}}（品川区西五反田）／入場無料"
+      content="{{event.year}}.{{event.startLabel}} {{event.startWeekday}} – {{event.lastDay}} {{event.lastWeekday}} 11:00–19:00／{{event.venue}}（品川区西五反田）／入場無料"
     />
     <meta property="og:url" content="{{event.url}}" />
     <meta property="og:image" content="{{event.url}}img/ogp.jpg" />
@@ -336,7 +336,7 @@
               <p class="intro-save-date" aria-label="{{event.dateAccessible}}">
                 <span>{{event.year}}</span> {{event.startLabel}}
                 <small>{{event.startWeekday}}</small><i aria-hidden="true">—</i>{{event.lastLabel}}
-                <small>{{event.lastWeekday}}</small>
+                <small>{{event.lastWeekday}}</small> 11:00–19:00
               </p>
               <details class="intro-calendar">
                 <summary>
@@ -371,7 +371,7 @@
             <figure class="polaroid memory-one">
               <img
                 src="img/optimized/m/p1.5bf4da16ebc5.webp"
-                alt="雪の中で遊ぶ子どもたち"
+                alt="雪の中で遊ぶお子さまたち"
                 loading="lazy"
                 width="1440"
                 height="1620"
@@ -412,7 +412,7 @@
           <nav class="program-nav" aria-label="プログラム">
             <a href="#snowpark">01 雪あそび</a><a href="#talk">02 トーク</a
             ><a href="#market">03 マーケット</a><a href="#cafe">04 カフェ</a
-            ><a href="#art">05 アート</a>
+            ><a href="#art">05 アート</a><a href="#tree">06 ツリー</a>
           </nav>
         </div>
 
@@ -422,7 +422,7 @@
             <figure class="way__ph">
               <img
                 src="img/optimized/m/p1.5bf4da16ebc5.webp"
-                alt="雪の上でソリに乗って笑う子どもたち"
+                alt="雪の上でソリに乗って笑うお子さまたち"
                 loading="lazy"
                 width="1440"
                 height="1620"
@@ -434,18 +434,19 @@
               <h3 class="way__h">雪で、思いっきり遊ぶ。</h3>
               <p class="way__en">Play Snow Park｜雪の広場</p>
               <p class="body">
-                {{event.venue}}
-                の夕陽公園に、本物の雪の広場ができます。さわって、ころがって、雪だるまをつくる。ソリやスコップは会場で無料で貸し出すので、手ぶらで来ても、そのまま遊べます。
+                都会のまんなかで、雪だるまをつくる。{{event.venue}}の夕陽公園に、2日間だけ本物の雪の広場ができます。さわって、ころがって、思いきり遊べます。ソリやスコップは会場で無料で貸し出すので、手ぶらで来て大丈夫です。
               </p>
               <p class="tags">
                 <span
                   >{{event.startLabel}} {{event.startWeekday}} – {{event.lastDay}}
                   {{event.lastWeekday}}</span
-                ><span>夕陽公園</span><span>無料</span>
+                ><span>11:00–19:00</span><span>夕陽公園</span><span>無料</span>
               </p>
               <a class="fundlink" href="snowfund.html">
                 <b>雪募金で、雪の広場を広げる</b>
-                <span>1口1万円で、雪およそ100kg。集まった分だけ、この街に雪がつもります。</span>
+                <span
+                  >雪の量は、協賛企業の皆さまと雪募金（1口1万円で雪およそ100kg）の支援に応じて増えていきます。</span
+                >
                 <i aria-hidden="true">→</i>
               </a>
             </div>
@@ -526,14 +527,13 @@
               <h3 class="way__h">冬の市を、歩く。</h3>
               <p class="way__en">Christmas Market &amp; Kitchen Car｜マーケット＆キッチンカー</p>
               <p class="body">
-                ガーデンに、まちのお店が並ぶ冬の市が開きます。お店を出すのは、{{event.venue}}
-                にゆかりのある人や、このまちで商いをする人たち。外からもすてきなお店とキッチンカーがたくさん来ます。温かい食べものと飲みものを片手に、冬の贈りものを探しに。
+                お店をのぞきながら、温かい一杯を片手に歩く。ガーデンに、まちのお店が並ぶ冬の市が開きます。お店を出すのは、{{event.venue}}にゆかりのある人や、このまちで商いをする人たち。外からもショップやキッチンカーが集まります。家族や友だちへの、冬の贈りものを探しに来てください。
               </p>
               <p class="tags">
                 <span
                   >{{event.startLabel}} {{event.startWeekday}} – {{event.lastDay}}
                   {{event.lastWeekday}}</span
-                ><span>ガーデン</span>
+                ><span>11:00–19:00</span><span>ガーデン</span>
               </p>
               <a class="morelink" href="shops.html">出店者・キッチンカーを見る →</a>
             </div>
@@ -556,9 +556,8 @@
               <h3 class="way__h">温かい一杯で、ひと息つく。</h3>
               <p class="way__en">Coffee Stand MARC｜カフェ</p>
               <p class="body">
-                雪で遊んで冷えた手には、温かいコーヒーとココアをどうぞ。Coffee Stand MARC で、THE
-                SNOW CHRISTMAS
-                だけの冬の限定ドリンクを用意します。寒い日でも、ここに来ればほっと温まれます。
+                雪遊びで冷えた手を、温かいカップで包む。Coffee Stand MARC で、THE SNOW CHRISTMAS
+                だけの冬の限定ドリンクを用意します。コーヒーもココアもあるので、お子さまと一緒にひと休みできます。
               </p>
               <p class="tags">
                 <span
@@ -574,7 +573,7 @@
             <figure class="way__ph way__ph--two">
               <img
                 src="img/optimized/m/p5_ws.c80f08042d21.webp"
-                alt="アートワークショップで絵を描く子どもたち"
+                alt="アートワークショップで絵を描くお子さまたち"
                 loading="lazy"
                 width="900"
                 height="900"
@@ -593,14 +592,38 @@
               <h3 class="way__h">描いた絵が、作品として飾られる。</h3>
               <p class="way__en">Art Workshop &amp; Exhibition｜アートワークショップと展示</p>
               <p class="body">
-                館内のスタジオにアーティストを招き、雪と冬をテーマに、子どもも大人も同じテーブルで手を動かします。描いた絵は、ホールに作品として飾ります。クリスマスキャンドルのワークショップも開催します。
+                外で雪にふれたら、館内でそれを絵にする。館内のスタジオにアーティストを招き、雪と冬をテーマに、お子さまも大人も同じテーブルで手を動かします。描いた絵は、ホールに作品として飾ります。クリスマスキャンドルのワークショップもあります。
               </p>
               <p class="tags">
                 <span
                   >{{event.startLabel}} {{event.startWeekday}} – {{event.lastDay}}
                   {{event.lastWeekday}}</span
-                ><span>STUDIO・HALL</span><span>参加の方法は11月上旬に</span>
+                ><span>STUDIO・HALL</span
+                ><span>参加の方法は公式サイトとInstagramでお知らせします</span>
               </p>
+            </div>
+          </article>
+
+          <!-- 6 クリスマスツリー -->
+          <article class="way way--rev" id="tree">
+            <figure class="way__ph">
+              <img
+                src="img/optimized/m/news_tree.84ccb20a0558.webp"
+                alt="灯りのともるクリスマスツリー"
+                loading="lazy"
+                width="900"
+                height="900"
+                decoding="async"
+              />
+            </figure>
+            <div class="way__txt">
+              <p class="way__no">06</p>
+              <h3 class="way__h">冬のまちに、灯りをともす。</h3>
+              <p class="way__en">Christmas Tree｜クリスマスツリー</p>
+              <p class="body">
+                帰り道、ふと見上げると、灯りがともっている。{{event.venue}}の中央に、{{event.title}}のシンボルとなるクリスマスツリーが立ちます。12月10日から26日まで、イベントの前後も、夜の冬のまちを照らします。
+              </p>
+              <p class="tags"><span>12.10 THU – 26 SAT</span><span>{{event.venue}} 中央</span></p>
             </div>
           </article>
         </div>
@@ -769,7 +792,7 @@
                 >あとは当日、</span
               ><span class="nowrap">来るだけ。</span>
             </h3>
-            <p class="opening-note">開場時間は11月上旬にお知らせします。</p>
+            <p class="opening-note">開場時間は11:00〜19:00です。</p>
             <div class="plan__btns">
               <a class="btn" href="#" id="calGoogle" target="_blank" rel="noopener"
                 >Googleカレンダーに入れる</a
@@ -780,7 +803,7 @@
             </div>
             <ul class="copylist">
               <li>
-                <span>日時</span><b id="cpDate">{{event.dateJapanese}}</b
+                <span>日時</span><b id="cpDate">{{event.dateJapanese}} 11:00〜19:00</b
                 ><button type="button" data-copy="cpDate">コピー</button>
               </li>
               <li>
@@ -1044,7 +1067,10 @@
       <section class="sponsors" aria-labelledby="sp-h">
         <div class="wrap">
           <p class="label">Organizer &amp; Sponsors</p>
-          <p class="organizer"><span>主催</span>{{event.title}} 実行委員会</p>
+          <p class="organizer">
+            <span>主催</span>{{event.title}} 実行委員会（一般社団法人MEGURO MARC、株式会社Embedded
+            Blue、ファイブメディット株式会社）
+          </p>
           <h2 class="h-sec" id="sp-h">協賛</h2>
           <ul class="logos"></ul>
           <p class="cap">この雪は、まちの企業と、みなさんの雪募金で降っています。</p>
@@ -1073,10 +1099,10 @@
             MARC。500戸の住まいと、平日約3,000人が行き交うオフィスが、ひとつの中庭を囲んでいます。働く人、暮らす人、訪れる人が自然とすれちがう、このまちの広場です。
           </p>
           <ul class="stations">
-            <li><b>不動前駅</b><span>東急目黒線</span><em>徒歩7分</em></li>
+            <li><b>不動前駅</b><span>東急目黒線</span><em>徒歩5分</em></li>
             <li>
               <b>目黒駅</b><span>JR山手線・東京メトロ南北線・都営三田線・東急目黒線</span
-              ><em>徒歩10分</em>
+              ><em>徒歩6分</em>
             </li>
             <li><b>五反田駅</b><span>JR山手線・都営浅草線・東急池上線</span><em>徒歩11分</em></li>
           </ul>
@@ -1154,9 +1180,7 @@
           </details>
           <details>
             <summary>雪の広場はいつ開いていますか？</summary>
-            <p>
-              {{event.dateWithoutYear}}の2日間です。開いている時間は、11月上旬にこのページでお知らせします。
-            </p>
+            <p>{{event.dateWithoutYear}}の2日間、11:00〜19:00です。</p>
           </details>
           <details>
             <summary>クリスマスツリーはいつ見られますか？</summary>
@@ -1167,7 +1191,9 @@
           </details>
           <details>
             <summary>雨や雪の予報のときは？</summary>
-            <p>開催の判断と、当日のお知らせの方法は、11月上旬に「お知らせ」でお伝えします。</p>
+            <p>
+              開催の判断と、当日のお知らせの方法は、決まり次第「お知らせ」とInstagramでお伝えします。
+            </p>
           </details>
           <!-- TODO（11/6までに答えを決める）：予約の有無／混雑と入場制限／対象年齢と付き添い／ベビーカー・トイレ・授乳室／駐車場と駐輪場 -->
         </div>
