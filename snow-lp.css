@@ -2627,3 +2627,9 @@
     font-size: 22px;
   }
 }
+
+/* 文末の1〜2文字だけが次の行に落ちないよう、本文を文節で折り返す */
+.snow-lp p {
+  word-break: auto-phrase;
+  text-wrap: pretty;
+}
