@@ -6,7 +6,7 @@
     <title>{{event.title}} {{event.year}}｜雪が降る。この街に。｜{{event.venue}}</title>
     <meta
       name="description"
-      content="{{event.dateJapanese}}、{{event.venue}}（品川区西五反田）に本物の雪の広場ができます。メダリストのトークショー、マーケット、アートワークショップも。入場無料。"
+      content="{{event.dateJapanese}}、{{event.venue}}（品川区西五反田）に、北海道・沼田町の天然雪で2日間だけの雪の広場ができます。金・銀メダリストのトークショー、クリスマスマーケット、アートワークショップも。入場無料。"
     />
     <link rel="canonical" href="{{event.url}}" />
     <meta name="robots" content="max-image-preview:large" />
@@ -90,7 +90,7 @@
             "@id": "{{event.url}}#event",
             "name": "{{event.title}} {{event.year}}",
             "alternateName": "ザ・スノークリスマス",
-            "description": "{{event.dateJapanese}}、{{event.venue}}（東京都品川区西五反田）の夕陽公園に本物の雪の広場ができる、入場無料の冬のまちのお祭り。雪あそび、金メダリスト木村葵来選手・銀メダリスト木俣椋真選手・パラスノーボーダー岡本圭司選手のトークショー、クリスマスマーケットとキッチンカー、カフェ、アートワークショップと展示。",
+            "description": "{{event.dateJapanese}}、{{event.venue}}（東京都品川区西五反田）の夕陽公園に北海道・沼田町の天然雪で雪の広場ができる、入場無料の冬のまちのお祭り。雪あそび、金メダリスト木村葵来選手・銀メダリスト木俣椋真選手・パラスノーボーダー岡本圭司選手のトークショー、クリスマスマーケットとキッチンカー、カフェ、アートワークショップと展示。",
             "url": "{{event.url}}",
             "image": ["{{event.url}}img/ogp.jpg"],
             "startDate": "{{event.startDate}}",
@@ -431,10 +431,16 @@
             </figure>
             <div class="way__txt">
               <p class="way__no">01</p>
-              <h3 class="way__h">雪で、思いっきり遊ぶ。</h3>
+              <h3 class="way__h">
+                <span class="nowrap">北海道の雪で、</span
+                ><span class="nowrap">思いっきり遊ぶ。</span>
+              </h3>
               <p class="way__en">Play Snow Park｜雪の広場</p>
               <p class="body">
-                都会のまんなかで、雪だるまをつくる。{{event.venue}}の夕陽公園に、2日間だけ本物の雪の広場ができます。さわって、ころがって、思いきり遊べます。ソリやスコップは会場で無料で貸し出すので、手ぶらで来て大丈夫です。
+                都会のまんなかで、雪だるまをつくる。北海道・沼田町から天然雪を運び、{{event.venue}}の夕陽公園に2日間だけの雪の広場ができます。さわって、ころがって、思いきり遊べます。ソリやスコップは会場で無料で貸し出すので、手ぶらで来て大丈夫です。
+              </p>
+              <p class="body">
+                沼田町は、冬に多くの雪が降り積もるまちです。雪の冷たさを農産物の貯蔵に生かすなど、雪を地域の資源として使ってきました。その雪を東京へ届けることで、雪国の自然と暮らしに目を向けるきっかけをつくります。
               </p>
               <p class="tags">
                 <span
@@ -467,12 +473,21 @@
             </figure>
             <div class="way__txt">
               <p class="way__no">02</p>
-              <h3 class="way__h">メダリストと、雪の話をする。</h3>
+              <h3 class="way__h">
+                <span class="nowrap">宣言どおりの</span
+                ><span class="nowrap">金メダルを持って、</span><span class="nowrap">目黒へ。</span>
+              </h3>
               <p class="way__en">Talk Show｜トークショー</p>
               <p class="body">
-                ミラノ・コルティナ2026冬季五輪のスノーボード・ビッグエアで金メダルを獲得した木村葵来選手、銀メダルを獲得した木俣椋真選手、パラスノーボーダーの岡本圭司選手の3名によるスペシャルトークショーを開催！
+                前回の THE SNOW CHRISTMAS
+                で「金メダルを獲ってきます！」と宣言した木村葵来選手。2026年2月、ミラノ・コルティナ2026冬季オリンピックのスノーボード男子ビッグエアで、その言葉どおり金メダルを獲得しました。今年はイベントアンバサダーとして、ふたたび目黒の会場に立ちます。
               </p>
-              <p class="tags"><span>日時は調整中</span><span>イベントエリア</span></p>
+              <p class="body">
+                12月19日（土）は、同種目銀メダリストの木俣椋真選手、パラスノーボーダーの岡本圭司選手を加えた3名が、オリンピック・パラリンピックの舞台で見た景色や競技の魅力、夢に挑み続けることについて語ります。
+              </p>
+              <p class="tags">
+                <span>12.19 SAT 限定</span><span>時間は調整中</span><span>イベントエリア</span>
+              </p>
               <details class="ask">
                 <summary class="btn">選手への質問について</summary>
                 <div class="blank-panel blank-panel--compact">
@@ -943,7 +958,7 @@
                 <div class="people-caption">
                   <span class="people-number" aria-hidden="true">04</span>
                   <h3 id="people-name-4">木村葵来</h3>
-                  <p>スノーボード ビッグエア <br />金メダリスト</p>
+                  <p>スノーボード男子ビッグエア <br />金メダリスト／イベントアンバサダー</p>
                 </div>
                 <template class="people-profile"
                   ><p class="people-profile-meta">
@@ -978,7 +993,7 @@
                 <div class="people-caption">
                   <span class="people-number" aria-hidden="true">05</span>
                   <h3 id="people-name-5">木俣椋真</h3>
-                  <p>スノーボード ビッグエア <br />銀メダリスト</p>
+                  <p>スノーボード男子ビッグエア <br />銀メダリスト／スペシャルゲスト</p>
                 </div>
                 <template class="people-profile"
                   ><p class="people-profile-meta">
