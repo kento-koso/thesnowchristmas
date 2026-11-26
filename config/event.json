@@ -11,5 +11,6 @@
   "calendarStamp": "20261015T000000Z",
   "donationUrl": "https://square.link/u/0BWJTz8L",
   "donationCloseDate": "2026-12-20",
-  "contactEmail": "info@thesnowchristmas.com"
+  "contactEmail": "info@thesnowchristmas.com",
+  "showPeople": false
 }

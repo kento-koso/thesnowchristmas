@@ -63,7 +63,9 @@ def render(name, source, event):
         if count != 1:
             raise ValueError(f'{name}: expected one {component} region, found {count}')
     values = {'home': '' if name == 'index.html' else './',
-              'top': '#top' if name == 'index.html' else '#page-top'}
+              'top': '#top' if name == 'index.html' else '#page-top',
+              # config/event.json の showPeople で「つくる人たち」セクションとメニューを出し入れする
+              'peopleVisible': 'true' if event.get('showPeople', True) else 'false'}
     values.update({f'event.{k}': v for k, v in event.items()})
     return asset_versions(substitute(source, values))
 
