@@ -13,6 +13,7 @@ window.SnowEvent = Object.freeze({
   "donationUrl": "https://square.link/u/0BWJTz8L",
   "donationCloseDate": "2026-12-20",
   "contactEmail": "info@thesnowchristmas.com",
+  "showPeople": false,
   "year": "2026",
   "startLabel": "12.19",
   "lastLabel": "12.20",

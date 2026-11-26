@@ -7,7 +7,8 @@
 .site-shell:not(.snow-lp) {
   --masthead-progress: 1;
 }
-.site-shell [hidden] {
+.site-shell [hidden],
+.site-shell [data-section-visible='false'] {
   display: none !important;
 }
 .site-shell :focus-visible {

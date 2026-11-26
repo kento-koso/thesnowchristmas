@@ -161,7 +161,7 @@
     <link rel="stylesheet" href="snow-placeholder.css?v=7df30855af22" />
     <link rel="stylesheet" href="snow-world.css?v=d4f251c8c420" />
     <link rel="stylesheet" href="snow-header.css?v=027437d4758c" />
-    <link rel="stylesheet" href="site-shell.css?v=c34150d89fc5" />
+    <link rel="stylesheet" href="site-shell.css?v=25ada98f5567" />
     <link rel="stylesheet" href="people.css?v=455839172389" />
     <link rel="stylesheet" href="calendar.css?v=03b73ac9c499" />
   </head>
@@ -185,7 +185,7 @@
         <p class="menu-heading">Explore</p>
         <a href="#intro">About</a>
         <a href="#enjoy">楽しみかた</a>
-        <a href="#people">つくる人</a>
+        <a href="#people" data-section-visible="false">つくる人</a>
       </div>
       <div class="menu-group">
         <p class="menu-heading">Visit</p>
@@ -1435,7 +1435,12 @@
         <div class="winter-bank" aria-hidden="true"></div>
       </section>
 
-      <section class="people-section" id="people" aria-labelledby="msg-h">
+      <section
+        class="people-section"
+        id="people"
+        aria-labelledby="msg-h"
+        data-section-visible="false"
+      >
         <div class="wrap people-heading">
           <div>
             <p class="label">People</p>
@@ -1737,7 +1742,9 @@
     <nav class="ft__menu" aria-label="メニュー">
       <a href="./">Top<small>トップ</small></a>
       <a href="#enjoy">How to enjoy<small>楽しみかた</small></a>
-      <a href="#people">People<small>つくる人たち</small></a>
+      <a href="#people" data-section-visible="false"
+        >People<small>つくる人たち</small></a
+      >
       <a href="news.html">News<small>お知らせ</small></a>
       <a href="shops.html">Shops<small>出店者・キッチンカー</small></a>
       <a href="snowfund.html">Snow Fund<small>雪募金</small></a>
@@ -1790,7 +1797,7 @@
 </footer>
 <!-- shared:footer:end -->
 
-    <script src="config/event.js?v=ff2b4ae2db6d" defer></script>
+    <script src="config/event.js?v=dcf10fe0da62" defer></script>
     <script src="motion-state.js?v=c661e2a6b71f" defer></script>
     <script src="button-snow.js?v=c9beffdf19ab" defer></script>
     <script src="main.js?v=041c01cb9d9a" defer></script>
