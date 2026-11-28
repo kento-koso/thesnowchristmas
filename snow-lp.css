@@ -870,17 +870,17 @@
   padding: 6px 0;
 }
 .snow-lp .logos img {
-  max-width: 180px;
-  max-height: 46px;
+  max-width: 200px;
+  max-height: 54px;
   width: auto;
   height: auto;
 }
 .snow-lp .logos {
-  gap: 18px 34px;
+  gap: 10px 22px;
   align-items: center;
 }
 .snow-lp .logos--partner img {
-  max-height: 50px;
+  max-height: 58px;
 }
 .snow-lp .credits {
   display: grid;
@@ -2802,5 +2802,14 @@
   }
   .snow-lp .ig__grid {
     gap: 2px;
+  }
+}
+
+/* スマホでは協賛ロゴを1社ずつ縦に並べる */
+@media (max-width: 760px) {
+  .snow-lp .logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
   }
 }
