@@ -131,6 +131,23 @@
   font: 24px var(--serif);
   color: #174767;
 }
+.winter-fund .fund__goal--yen {
+  align-items: baseline;
+  gap: 6px;
+}
+.winter-fund .fund__goal--yen b {
+  font: 600 40px/1 var(--f-en);
+  letter-spacing: -0.02em;
+}
+.winter-fund .fund__goal--yen small {
+  font: 500 16px var(--jp-serif);
+}
+.fund-goal-tax {
+  display: block;
+  margin: -6px 0 8px;
+  font-size: 9px;
+  color: #436780;
+}
 .fund-story .h-sec {
   font: 500 clamp(21px, 2.2vw, 30px)/1.9 var(--jp-serif);
   letter-spacing: 0.03em;
@@ -390,8 +407,8 @@
   text-align: center;
 }
 .fund-journey-heading .h-sec {
-  font: 500 18px/1.7 var(--jp-serif);
-  margin-top: 19px;
+  font: 500 clamp(22px, 2.4vw, 30px)/1.7 var(--jp-serif);
+  color: #174767;
 }
 .fund-journey-heading .lead {
   font-size: 12px;
@@ -518,33 +535,63 @@
   color: #6a8193;
 }
 .journey-steps {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  max-width: 920px;
+  gap: 22px;
+  max-width: 1000px;
   margin: 70px auto 0;
   padding: 0;
   list-style: none;
 }
 .journey-steps li {
-  padding-left: 18px;
-  border-left: 1px solid #c9d9e5;
+  position: relative;
+  padding: 30px 24px 28px;
+  background: #fffefb url('img/winter/paper-grain.svg');
+  box-shadow: 0 9px 30px #173d5c12;
+}
+.journey-steps li:nth-child(odd) {
+  transform: rotate(-1.2deg);
+}
+.journey-steps li:nth-child(even) {
+  transform: rotate(1.2deg) translateY(10px);
+  background-color: #eef5fa;
+}
+.journey-steps li:not(:last-child):after {
+  content: '';
+  position: absolute;
+  top: 52px;
+  right: -18px;
+  width: 14px;
+  border-top: 2px dotted #7f9db3;
+}
+.journey-icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  color: #174767;
+}
+.journey-icon svg {
+  width: 100%;
+  height: 100%;
 }
 .journey-steps span {
-  display: block;
-  font: 500 30px/1 var(--serif);
-  color: #174767;
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  font: 500 34px/1 var(--serif);
+  color: #9fb6c7;
 }
 .journey-steps b {
   display: block;
-  margin-top: 10px;
-  font: 500 15px/1.6 var(--jp-serif);
+  margin-top: 18px;
+  font: 500 17px/1.6 var(--jp-serif);
   color: #174767;
 }
 .journey-steps p {
-  margin-top: 8px;
-  font-size: 11px;
-  line-height: 1.9;
+  margin-top: 10px;
+  font-size: 11.5px;
+  line-height: 2;
   color: #476b85;
 }
 
@@ -789,6 +836,9 @@
 }
 
 @media (max-width: 760px) {
+  .winter-fund .fund__goal--yen b {
+    font-size: 30px;
+  }
   .fund-journey {
     padding: 60px 0 70px;
   }
@@ -818,8 +868,15 @@
     margin-top: 44px;
   }
   .journey-steps {
-    grid-template-columns: 1fr 1fr;
-    gap: 26px 18px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 360px;
     margin-top: 50px;
+  }
+  .journey-steps li:nth-child(even) {
+    transform: rotate(1.2deg);
+  }
+  .journey-steps li:not(:last-child):after {
+    display: none;
   }
 }
