@@ -108,19 +108,22 @@
     rel="noopener"
     aria-label="Instagram（{{event.title}}）・新しいタブで開く"
   >
-    <svg
-      viewBox="0 0 24 24"
-      width="22"
-      height="22"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="1.5"
-      aria-hidden="true"
-    >
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none" />
-    </svg>
+    <span class="hd__insta-badge" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        width="22"
+        height="22"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        aria-hidden="true"
+      >
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none" />
+      </svg>
+    </span>
+    <span class="hd__insta-label" aria-hidden="true">Instagram</span>
   </a>
   <a class="hd__cta" href="{{home}}#plan" aria-label="{{event.dateShort}}を予定に入れる">
     <!-- Lucide calendar-days; ISC license: licenses/lucide.txt -->

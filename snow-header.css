@@ -617,30 +617,53 @@ html.menu-open body {
 .site-shell .hd__insta {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 57px;
+  gap: 11px;
   height: 57px;
+  padding: 0 20px 0 13px;
   margin-left: auto;
-  margin-right: 10px;
   flex-shrink: 0;
-  border: 1px solid #f1f7fb88;
+  border: 1px solid #f1f7fbaa;
   border-radius: 2px;
-  color: #f1f7fb;
-  transition: background-color 0.2s;
+  background: #f1f7fb1f;
+  backdrop-filter: blur(6px);
+  color: #f6fafd;
+  font: 600 13px var(--f-en);
+  letter-spacing: 0.06em;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
 }
 .site-shell .hd__insta:hover {
-  background: #ffffff1a;
+  background: #f1f7fb38;
+  transform: translateY(-1px);
+}
+.site-shell .hd__insta-badge {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 9px;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  color: #fff;
+  box-shadow: 0 2px 8px #00000033;
 }
 .site-shell .hd__insta svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 }
 .site-shell .hd__insta + .hd__cta {
-  margin-left: 0;
+  margin-left: -14px;
 }
 @media (min-width: 1101px) {
   .site-shell .motion-toggle {
-    right: calc(4.2% + 272px);
+    right: calc(4.2% + 336px);
   }
 }
 @media (max-width: 1100px) {
@@ -650,19 +673,37 @@ html.menu-open body {
     right: 146px;
     width: 38px;
     height: 38px;
+    padding: 0;
     margin: 0;
+    justify-content: center;
+    border: 0;
+    background: none;
+    backdrop-filter: none;
+  }
+  .site-shell .hd__insta-label {
+    display: none;
+  }
+  .site-shell .hd__insta-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
   }
 }
 @media (max-width: 760px) {
   .site-shell .hd__insta {
-    position: absolute;
     top: 18px;
     right: 70px;
     width: 44px;
     height: 44px;
-    margin: 0;
+  }
+  .site-shell .hd__insta-badge {
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: #ffffff10;
+  }
+  .site-shell .hd__insta svg {
+    width: 22px;
+    height: 22px;
   }
 }
 @media (max-width: 400px) {
@@ -671,6 +712,18 @@ html.menu-open body {
     width: 40px;
     height: 40px;
     top: 20px;
+  }
+  .site-shell .hd__insta-badge {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-shell .hd__insta {
+    transition: none;
+  }
+  .site-shell .hd__insta:hover {
+    transform: none;
   }
 }
 
