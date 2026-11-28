@@ -579,3 +579,44 @@
     height: 120px;
   }
 }
+
+/* 出店者カード：写真が届くまでは雪の枠のまま、下に店名・メニュー・出店日 */
+.winter-shops .shop-card__body {
+  padding: 16px 18px 20px;
+  text-align: left;
+}
+.winter-shops .shop-card h3 {
+  margin: 0;
+  font: 600 17px/1.5 var(--jp-serif, serif);
+  color: #153956;
+}
+.winter-shops .shop-card__menu {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: #3b5a72;
+}
+.winter-shops .shop-card__days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 0;
+}
+.winter-shops .shop-card__days span {
+  padding: 3px 9px;
+  border: 1px solid #b9d0e0;
+  font: 600 10px var(--f-en);
+  letter-spacing: 0.08em;
+  color: #2b5576;
+}
+.winter-shops .shop-card__ig {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #153956;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.winter-shops .shop-grid + .blank-section-note {
+  margin-top: 26px;
+}
