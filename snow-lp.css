@@ -2804,3 +2804,12 @@
     gap: 2px;
   }
 }
+
+/* スマホでは協賛ロゴを1社ずつ縦に並べる */
+@media (max-width: 760px) {
+  .snow-lp .logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+}
