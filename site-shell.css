@@ -211,3 +211,12 @@
   border-radius: 0;
   background: transparent;
 }
+
+.site-shell .ft .sns a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.site-shell .ft .sns__icon {
+  flex-shrink: 0;
+}

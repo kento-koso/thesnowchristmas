@@ -612,3 +612,78 @@ html.menu-open body {
     height: 24px;
   }
 }
+
+/* Instagram entry beside the calendar action: always visible, no menu needed. */
+.site-shell .hd__insta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 57px;
+  height: 57px;
+  margin-left: auto;
+  margin-right: 10px;
+  flex-shrink: 0;
+  border: 1px solid #f1f7fb88;
+  border-radius: 2px;
+  color: #f1f7fb;
+  transition: background-color 0.2s;
+}
+.site-shell .hd__insta:hover {
+  background: #ffffff1a;
+}
+.site-shell .hd__insta svg {
+  width: 22px;
+  height: 22px;
+}
+.site-shell .hd__insta + .hd__cta {
+  margin-left: 0;
+}
+@media (min-width: 1101px) {
+  .site-shell .motion-toggle {
+    right: calc(4.2% + 272px);
+  }
+}
+@media (max-width: 1100px) {
+  .site-shell .hd__insta {
+    position: absolute;
+    top: 22px;
+    right: 146px;
+    width: 38px;
+    height: 38px;
+    margin: 0;
+  }
+}
+@media (max-width: 760px) {
+  .site-shell .hd__insta {
+    position: absolute;
+    top: 18px;
+    right: 70px;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    border-radius: 50%;
+    background: #ffffff10;
+  }
+}
+@media (max-width: 400px) {
+  .site-shell .hd__insta {
+    right: 61px;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+  }
+}
+
+/* A second account sits beside the first in the menu. */
+.menu-social a + a {
+  margin-left: -8px;
+}
+@media (min-width: 761px) {
+  .menu-social {
+    justify-content: flex-start;
+    gap: 32px;
+  }
+  .menu-social__label {
+    margin-right: auto;
+  }
+}
