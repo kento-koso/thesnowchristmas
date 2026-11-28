@@ -752,3 +752,32 @@ html.menu-open body {
     left: auto;
   }
 }
+
+/* スマホ：スクロール中はメニューボタンだけ。ロゴ・日付・ボタン・背景は隠して画面を広く使う */
+@media (max-width: 760px) {
+  .site-shell .header-date__days {
+    white-space: nowrap;
+  }
+  .site-shell.hd-compact:not(.nav-open) .hd {
+    pointer-events: none;
+  }
+  .site-shell.hd-compact:not(.nav-open) .hd:before {
+    opacity: 0 !important;
+  }
+  .site-shell.hd-compact:not(.nav-open) .hd__logo,
+  .site-shell.hd-compact:not(.nav-open) .header-date,
+  .site-shell.hd-compact:not(.nav-open) .hd__insta,
+  .site-shell.hd-compact:not(.nav-open) .hd__cta,
+  .site-shell.hd-compact:not(.nav-open) .travelling-logo {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.25s,
+      visibility 0.25s;
+  }
+  .site-shell.hd-compact:not(.nav-open) .menu-toggle {
+    pointer-events: auto;
+    background: #0b2744e0;
+    box-shadow: 0 2px 10px #0003;
+  }
+}
