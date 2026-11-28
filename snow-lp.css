@@ -702,8 +702,16 @@
   width: 100%;
   justify-content: space-between;
 }
-.snow-lp .ask__form {
+.snow-lp .ask__panel {
+  margin-top: 12px;
+  padding: 22px 24px 18px;
+  background: linear-gradient(140deg, #e0edf6, #f2f8fc);
   text-align: left;
+}
+.snow-lp .ask__panel .btn {
+  margin: 16px 0 12px;
+  background: #173c5b;
+  color: #fff;
 }
 .snow-lp .vmap {
   width: min(1040px, calc(100% - 100px));
