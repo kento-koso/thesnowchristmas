@@ -879,6 +879,10 @@
   gap: 10px 22px;
   align-items: center;
 }
+/* マークと社名が上下に組まれたロゴは、横長ロゴと同じ高さだと小さく見えるので少し大きく */
+.snow-lp .logos img.logo--stacked {
+  max-height: 76px;
+}
 .snow-lp .logos--partner img {
   max-height: 58px;
 }
