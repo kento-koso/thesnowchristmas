@@ -740,3 +740,15 @@ html.menu-open body {
     margin-right: auto;
   }
 }
+
+/* スマホ・タブレットでは予定ボタンとインスタボタンを右端基準で固定する（PC用の詰めマージンを持ち込まない。iOS WebKitで左に飛ぶのを防ぐ） */
+@media (max-width: 1100px) {
+  .site-shell .hd__insta + .hd__cta,
+  .site-shell .is-solid .hd__insta + .hd__cta {
+    margin: 0;
+    left: auto;
+  }
+  .site-shell .hd__insta {
+    left: auto;
+  }
+}
