@@ -2705,6 +2705,28 @@
 .snow-lp .ig__follow:hover {
   background: #1877f2;
 }
+.snow-lp .ig__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.snow-lp .ig__grid a {
+  display: block;
+  overflow: hidden;
+}
+.snow-lp .ig__grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.snow-lp .ig__grid a:hover img {
+  transform: scale(1.04);
+}
 .snow-lp .ig__more {
   display: block;
   margin-top: 14px;
@@ -2729,5 +2751,8 @@
   }
   .snow-lp .ig__card {
     padding: 14px 14px 12px;
+  }
+  .snow-lp .ig__grid {
+    gap: 2px;
   }
 }
