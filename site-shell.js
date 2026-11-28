@@ -68,3 +68,27 @@
   // Do not restore a locked document from the back-forward cache.
   addEventListener('pagehide', () => setOpen(false));
 })();
+
+/* スマホでスクロールしたら、ヘッダーはメニューボタンだけ残す（body.hd-compact）。
+   トップはKVを過ぎてから、ほかのページは少し下がってから。 */
+(function () {
+  const kv = document.querySelector('.kv');
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const limit = kv ? (kv.closest('.hero-journey') || kv).offsetHeight - 60 : 80;
+    document.body.classList.toggle('hd-compact', window.scrollY > limit);
+  }
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    },
+    { passive: true }
+  );
+  window.addEventListener('resize', update, { passive: true });
+  update();
+})();

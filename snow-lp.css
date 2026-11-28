@@ -859,6 +859,10 @@
 .snow-lp .organizer {
   font-size: 12px;
 }
+.snow-lp .organizer span {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 .snow-lp .logos {
   justify-content: center;
   margin-top: 20px;
