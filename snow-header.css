@@ -781,3 +781,31 @@ html.menu-open body {
     box-shadow: 0 2px 10px #0003;
   }
 }
+
+/* iOS WebKitで right 指定が効かず左上に戻ることがあるため、スマホでは左基準で右上に置く（見た目の位置は従来と同じ） */
+@media (max-width: 760px) {
+  .site-shell .hd__cta,
+  .site-shell .is-solid .hd__cta,
+  .site-shell .hd__insta + .hd__cta,
+  .site-shell .is-solid .hd__insta + .hd__cta {
+    left: calc(100% - 20px - 44px);
+    right: auto;
+    margin: 0;
+  }
+  .site-shell .hd__insta {
+    left: calc(100% - 70px - 44px);
+    right: auto;
+    margin: 0;
+  }
+}
+@media (max-width: 400px) {
+  .site-shell .hd__cta,
+  .site-shell .is-solid .hd__cta,
+  .site-shell .hd__insta + .hd__cta,
+  .site-shell .is-solid .hd__insta + .hd__cta {
+    left: calc(100% - 13px - 44px);
+  }
+  .site-shell .hd__insta {
+    left: calc(100% - 61px - 40px);
+  }
+}
