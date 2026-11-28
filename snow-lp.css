@@ -869,22 +869,18 @@
   min-width: 0;
   padding: 6px 0;
 }
+/* ロゴの大きさは野村不動産を基準に、1社ずつ --logo-h で見た目の重さをそろえる */
 .snow-lp .logos img {
-  max-width: 200px;
-  max-height: 54px;
   width: auto;
-  height: auto;
+  height: var(--logo-h, 40px);
+  max-width: none;
+  max-height: none;
 }
 .snow-lp .logos {
+  max-width: 940px;
+  margin-inline: auto;
   gap: 10px 22px;
   align-items: center;
-}
-/* マークと社名が上下に組まれたロゴは、横長ロゴと同じ高さだと小さく見えるので少し大きく */
-.snow-lp .logos img.logo--stacked {
-  max-height: 76px;
-}
-.snow-lp .logos--partner img {
-  max-height: 58px;
 }
 .snow-lp .credits {
   display: grid;
