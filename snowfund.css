@@ -380,6 +380,174 @@
   gap: 8px;
   letter-spacing: 0.08em;
 }
+/* 雪の道のり：北海道・沼田町 → 東京駅 → MEGURO MARC */
+.fund-journey {
+  position: relative;
+  padding: 85px 0 95px;
+  background: linear-gradient(180deg, #edf5fa, #f6fafd);
+}
+.fund-journey-heading {
+  text-align: center;
+}
+.fund-journey-heading .h-sec {
+  font: 500 18px/1.7 var(--jp-serif);
+  margin-top: 19px;
+}
+.fund-journey-heading .lead {
+  font-size: 12px;
+  line-height: 2;
+  margin-top: 16px;
+  color: #607f95;
+}
+.journey-route {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 920px;
+  margin: 55px auto 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.journey-route:before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 16.6%;
+  right: 16.6%;
+  border-top: 2px dotted #7f9db3;
+}
+.journey-route li {
+  position: relative;
+  padding-top: 30px;
+}
+.journey-route li:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  border-radius: 50%;
+  background: #174767;
+  box-shadow: 0 0 0 5px #edf5fa;
+}
+.journey-en {
+  display: block;
+  font: 9px var(--f-en);
+  letter-spacing: 0.2em;
+  color: #6a8193;
+}
+.journey-route b {
+  display: block;
+  margin-top: 6px;
+  font: 500 17px/1.6 var(--jp-serif);
+  color: #174767;
+}
+.journey-note {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.9;
+  color: #476b85;
+}
+.journey-note:empty {
+  display: none;
+}
+.journey-distance {
+  margin-top: 30px;
+  text-align: center;
+  font: 500 44px/1.1 var(--serif);
+  color: #174767;
+}
+.journey-distance small {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: #6a8193;
+}
+.journey-town {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 45px;
+  align-items: center;
+  max-width: 920px;
+  margin: 60px auto 0;
+}
+.journey-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.journey-photos img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  box-shadow: 0 9px 30px #173d5c1a;
+}
+.journey-photos img:first-child {
+  transform: rotate(-2deg);
+}
+.journey-photos img:last-child {
+  transform: rotate(2deg) translateY(18px);
+}
+.journey-text h3 {
+  margin-top: 10px;
+  font: 500 22px/1.7 var(--jp-serif);
+  color: #174767;
+}
+.journey-text p {
+  font-size: 12px;
+  line-height: 2;
+  margin-top: 14px;
+  color: #476b85;
+}
+.journey-link {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 20px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid currentColor;
+  font-size: 13px;
+  color: #174767;
+}
+.winter-fund .journey-text .journey-credit {
+  margin-top: 14px;
+  font-size: 10px;
+  color: #6a8193;
+}
+.journey-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 920px;
+  margin: 70px auto 0;
+  padding: 0;
+  list-style: none;
+}
+.journey-steps li {
+  padding-left: 18px;
+  border-left: 1px solid #c9d9e5;
+}
+.journey-steps span {
+  display: block;
+  font: 500 30px/1 var(--serif);
+  color: #174767;
+}
+.journey-steps b {
+  display: block;
+  margin-top: 10px;
+  font: 500 15px/1.6 var(--jp-serif);
+  color: #174767;
+}
+.journey-steps p {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.9;
+  color: #476b85;
+}
+
 @media (max-width: 1100px) {
   .winter-fund .fundhero {
     gap: 46px;
@@ -618,4 +786,40 @@
 .fund-notes li {
   list-style: disc;
   margin: 0.2em 0;
+}
+
+@media (max-width: 760px) {
+  .fund-journey {
+    padding: 60px 0 70px;
+  }
+  .journey-route {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    max-width: 320px;
+    margin-top: 40px;
+  }
+  .journey-route:before {
+    top: 8px;
+    bottom: 40px;
+    left: 50%;
+    right: auto;
+    border-top: 0;
+    border-left: 2px dotted #7f9db3;
+  }
+  .journey-route li {
+    background: #f1f7fb;
+  }
+  .journey-distance {
+    font-size: 34px;
+  }
+  .journey-town {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 44px;
+  }
+  .journey-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 18px;
+    margin-top: 50px;
+  }
 }
