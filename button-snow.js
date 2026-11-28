@@ -46,8 +46,17 @@
         spark(hovered, true);
       }, 70);
   }
+  // Safari（WebKit）は defer のスクリプトをCSSの読み込み前に動かすことがある。
+  // その時点で位置を調べると、CSSで absolute にしているボタン（ヘッダーの予定ボタン等）まで
+  // static に見えて relative を直書きしてしまうので、CSSが揃ってから調べる。
+  function ensurePositioned() {
+    buttons.forEach((button) => {
+      if (getComputedStyle(button).position === 'static') button.style.position = 'relative';
+    });
+  }
+  if (document.readyState === 'complete') ensurePositioned();
+  else addEventListener('load', ensurePositioned, { once: true });
   buttons.forEach((button) => {
-    if (getComputedStyle(button).position === 'static') button.style.position = 'relative';
     button.style.overflow = 'hidden';
     button.addEventListener('mouseenter', () => {
       if (!finePointer.matches) return;
